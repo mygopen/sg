@@ -192,6 +192,43 @@ const panels = {
   }
 };
 
+const stopMapQueries = {
+  "台北起飛": "Taiwan Taoyuan International Airport Terminal 2",
+  "抵達樟宜、入境與午餐": "Singapore Changi Airport",
+  "Marina Bay Sands 入住與休息": "Marina Bay Sands Singapore",
+  "飯店泳池或購物中心慢慢恢復": "Marina Bay Sands Singapore",
+  "魚尾獅公園與濱海灣步道": "Merlion Park Singapore",
+  "Spectra 水舞或濱海灣夜景": "Spectra A Light and Water Show Singapore",
+  "早餐與步行到 Gardens by the Bay": "Gardens by the Bay Singapore",
+  "Flower Dome / Cloud Forest": "Flower Dome Cloud Forest Singapore",
+  "Supertree Grove 與輕午餐": "Supertree Grove Singapore",
+  "前往 Science Centre Singapore": "Science Centre Singapore",
+  "新加坡科學館": "Science Centre Singapore",
+  "回飯店游泳休息": "Marina Bay Sands Singapore",
+  "Garden Rhapsody 燈光秀": "Garden Rhapsody Supertree Grove Singapore",
+  "退房前整理行李": "Marina Bay Sands Singapore",
+  "出發前往 Singapore Zoo": "Singapore Zoo",
+  "新加坡動物園主園區": "Singapore Zoo",
+  "園內午餐與表演": "Singapore Zoo Ah Meng Restaurant",
+  "回 MBS 取行李": "Marina Bay Sands Singapore",
+  "移動到 Shangri-La Rasa Sentosa": "Shangri-La Rasa Sentosa Singapore",
+  "飯店泳池與 Siloso Beach": "Siloso Beach Singapore",
+  "聖淘沙晚餐": "Resorts World Sentosa Singapore",
+  "早餐與出門": "Shangri-La Rasa Sentosa Singapore",
+  "抵達 Resorts World Sentosa": "Resorts World Sentosa Singapore",
+  "Universal Studios Singapore": "Universal Studios Singapore",
+  "園內午餐與降溫": "Universal Studios Singapore",
+  "第二輪熱門設施": "Universal Studios Singapore",
+  "Singapore Oceanarium 備案": "Singapore Oceanarium Resorts World Sentosa",
+  "聖淘沙散步與晚餐": "Sentosa Singapore",
+  "早餐與退房": "Shangri-La Rasa Sentosa Singapore",
+  "前往樟宜機場": "Singapore Changi Airport",
+  "Jewel Changi Airport": "Jewel Changi Airport",
+  "報到與出境": "Singapore Changi Airport Terminal 1",
+  "機場午餐與最後採買": "Jewel Changi Airport",
+  "新加坡 → 台北": "Singapore Changi Airport"
+};
+
 const tabs = document.querySelector(".day-tabs");
 const dayPanel = document.querySelector(".day-panel");
 const infoPanel = document.querySelector(".info-panel");
@@ -201,6 +238,10 @@ let activeView = "summary";
 
 function icon(name) {
   return `<i data-lucide="${name}"></i>`;
+}
+
+function googleMapsUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function renderTabs() {
@@ -242,7 +283,19 @@ function renderDay() {
             <article class="stop">
               <time>${time}</time>
               <div>
-                <h3>${title}</h3>
+                <div class="stop__heading">
+                  <h3>${title}</h3>
+                  <a
+                    class="map-icon"
+                    href="${googleMapsUrl(stopMapQueries[title] || `${title} Singapore`)}"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="在 Google Maps 開啟 ${title}"
+                    title="Google Maps"
+                  >
+                    ${icon("map-pin")}
+                  </a>
+                </div>
                 <p>${text}</p>
               </div>
             </article>
