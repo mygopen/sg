@@ -179,12 +179,53 @@ const panels = {
     ]
   },
   tickets: {
-    title: "票券與預約",
-    items: [
-      "Gardens by the Bay、Science Centre、Singapore Zoo、USS、Singapore Oceanarium 都建議出發前確認 2026 年 8 月實際營業時間與票價。",
-      "USS 若遇暑假人潮，可先比價一般票 + Express Pass；8 人同行時，排隊時間的成本很高。",
-      "動物園表演與餵食體驗常需看當日場次，進園後先截圖地圖與節目表。",
-      "飯店泳池、兒童活動與早餐時段，入住當天直接向櫃台確認。"
+    title: "資訊",
+    sections: [
+      {
+        icon: "landmark",
+        title: "新加坡相關生活常識",
+        items: [
+          "新加坡使用新加坡幣 SGD；多數地方可刷卡或行動支付，但小額現金仍建議準備。",
+          "插座為英規 Type G，電壓 230V；手機、相機、行動電源通常只需轉接頭。",
+          "公共場所重視規範：MRT 禁飲食，亂丟垃圾、違規吸菸、帶榴槤上車都可能受罰。",
+          "室內冷氣很強，孩子可帶薄外套；戶外濕熱，水壺、防曬、輕便雨具每天都要帶。"
+        ]
+      },
+      {
+        icon: "siren",
+        title: "緊急聯絡電話",
+        items: [
+          "警察：999。",
+          "救護車 / 消防：995。",
+          "非緊急救護：1777。",
+          "台灣旅客可先備妥駐新加坡台北代表處電話、旅平險海外急難專線與飯店電話截圖。"
+        ]
+      },
+      {
+        icon: "plane-takeoff",
+        title: "機場出境教學",
+        items: [
+          "13:10 回程建議 10:30 前開始報到流程；8 人團請多留排隊、退稅、托運緩衝。",
+          "先處理航空公司報到與托運，再看是否需要退稅；退稅商品與單據請集中給一位成人管理。",
+          "Jewel 與航廈相連但不等於已出境，逛完 Jewel 後仍要回航廈完成安檢與出境。",
+          "出境後再採買液體或飲料最穩；登機口可能需要二次檢查，請提早看螢幕確認 gate。"
+        ]
+      },
+      {
+        icon: "smartphone",
+        title: "必備 APP",
+        items: [
+          "Grab：最常用叫車與外送，8 人移動時通常分 2 台。",
+          "CDG Zig：可叫 ComfortDelGro 計程車，尖峰時可當 Grab 之外的車源。",
+          "Gojek：叫車備案，適合比價與補車源。",
+          "Google Maps / Citymapper：查 MRT、步行時間與景點動線；出發前可先收藏飯店與每日景點。"
+        ]
+      }
+    ],
+    links: [
+      ["Visit Singapore", "https://www.visitsingapore.com/"],
+      ["Changi Airport", "https://www.changiairport.com/"],
+      ["ICA SG Arrival Card", "https://eservices.ica.gov.sg/sgarrivalcard/"]
     ]
   },
   transport: {
@@ -432,18 +473,51 @@ function renderInfoPanel() {
   infoPanel.innerHTML = `
     <article class="info-card">
       <h2>${panel.title}</h2>
-      <ul class="check-list">
-        ${panel.items
-          .map(
-            (item) => `
-              <li>
-                ${icon("check-circle-2")}
-                <span>${item}</span>
-              </li>
-            `
-          )
-          .join("")}
-      </ul>
+      ${
+        panel.sections
+          ? `
+            <div class="info-sections">
+              ${panel.sections
+                .map(
+                  (section) => `
+                    <section class="info-section">
+                      <div class="info-section__heading">
+                        ${icon(section.icon)}
+                        <h3>${section.title}</h3>
+                      </div>
+                      <ul class="check-list">
+                        ${section.items
+                          .map(
+                            (item) => `
+                              <li>
+                                ${icon("check-circle-2")}
+                                <span>${item}</span>
+                              </li>
+                            `
+                          )
+                          .join("")}
+                      </ul>
+                    </section>
+                  `
+                )
+                .join("")}
+            </div>
+          `
+          : `
+            <ul class="check-list">
+              ${panel.items
+                .map(
+                  (item) => `
+                    <li>
+                      ${icon("check-circle-2")}
+                      <span>${item}</span>
+                    </li>
+                  `
+                )
+                .join("")}
+            </ul>
+          `
+      }
       ${
         panel.links
           ? `
@@ -470,8 +544,19 @@ function render() {
   renderTabs();
   renderDay();
   renderInfoPanel();
+  updateViewMode();
   if (window.lucide) {
     window.lucide.createIcons();
+  }
+}
+
+function updateViewMode() {
+  const isItinerary = activeView === "summary";
+  tabs.hidden = !isItinerary;
+  dayPanel.hidden = !isItinerary;
+  infoPanel.classList.toggle("is-standalone", !isItinerary);
+  if (!isItinerary) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
 
@@ -488,6 +573,7 @@ toolButtons.forEach((button) => {
     activeView = button.dataset.view;
     toolButtons.forEach((item) => item.classList.toggle("is-active", item === button));
     renderInfoPanel();
+    updateViewMode();
     if (window.lucide) {
       window.lucide.createIcons();
     }

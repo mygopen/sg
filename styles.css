@@ -87,6 +87,10 @@ a:focus-visible {
   margin: 16px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .app-header {
   position: sticky;
   top: 0;
@@ -494,6 +498,44 @@ a:focus-visible {
 .info-card h2 {
   margin: 0 0 12px;
   font-size: 1.25rem;
+}
+
+.info-panel.is-standalone {
+  margin-top: 16px;
+}
+
+.info-panel.is-standalone .info-card {
+  min-height: calc(100vh - 120px);
+}
+
+.info-sections {
+  display: grid;
+  gap: 12px;
+}
+
+.info-section {
+  padding: 14px;
+  border: 1px solid #e0e7ff;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #ffffff, #f5f7ff);
+}
+
+.info-section__heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.info-section__heading svg {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+}
+
+.info-section h3 {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .check-list {
