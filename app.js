@@ -172,15 +172,6 @@ const days = [
 ];
 
 const panels = {
-  summary: {
-    title: "全程策略",
-    items: [
-      "8 月新加坡高溫潮濕，上午戶外、午後室內或飯店泳池，是 8 人親子團最穩的節奏。",
-      "Day1 與 Day5 刻意做輕，避免早班機與回程航班壓縮整趟旅行的體力。",
-      "兩段住宿很合理：前兩晚住濱海灣，後兩晚住聖淘沙，移動成本低很多。",
-      "每天都保留一個可刪減項目：Day2 晚間燈光秀、Day3 晚餐外出、Day4 Oceanarium。"
-    ]
-  },
   tickets: {
     title: "資訊",
     sections: [
@@ -555,6 +546,10 @@ function scrollToDayBanner() {
 }
 
 function renderInfoPanel() {
+  if (activeView === "summary") {
+    infoPanel.innerHTML = "";
+    return;
+  }
   const panel = panels[activeView];
   if (activeView === "exchange") {
     renderExchangePanel(panel);
@@ -784,6 +779,7 @@ function updateViewMode() {
   const isItinerary = activeView === "summary";
   tabs.hidden = !isItinerary;
   dayPanel.hidden = !isItinerary;
+  infoPanel.hidden = isItinerary;
   infoPanel.classList.toggle("is-standalone", !isItinerary);
   if (!isItinerary) {
     window.scrollTo({ top: 0, behavior: "smooth" });
