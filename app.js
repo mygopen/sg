@@ -9,6 +9,7 @@ const days = [
     pace: "低強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_and_Merlion.jpg?width=1200",
     imageCredit: "Photo: Wikimedia Commons",
+    weather: { icon: "cloud-rain", label: "午後雷雨", temp: "25-32°C" },
     summary:
       "早班機抵達後不急著塞滿景點，先讓大人小孩恢復體力。傍晚從魚尾獅公園一路走到濱海灣，夜景與水舞很適合當第一天的開場。",
     map: "https://www.google.com/maps/search/?api=1&query=Merlion+Park+Singapore",
@@ -40,6 +41,7 @@ const days = [
     pace: "中強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Supertree_Grove%2C_Gardens_by_the_Bay%2C_Singapore.jpg?width=1200",
     imageCredit: "Photo: Ralff Nestor Nacor / Wikimedia Commons",
+    weather: { icon: "cloud-sun", label: "悶熱多雲", temp: "25-31°C" },
     summary:
       "上午把戶外熱度留給濱海灣花園，接著進冷房展館；午後移到 Science Centre Singapore，讓 10-12 歲孩子有動手互動的空間。",
     map: "https://www.google.com/maps/search/?api=1&query=Gardens+by+the+Bay+Singapore",
@@ -73,6 +75,7 @@ const days = [
     pace: "中強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance_-_Singapore_Zoo_(01).jpg?width=1200",
     imageCredit: "Photo: Dan arndt / Wikimedia Commons",
+    weather: { icon: "umbrella", label: "短暫陣雨", temp: "25-32°C" },
     summary:
       "上午趁精神好去新加坡動物園，下午回市區拿行李後搬到聖淘沙。這天不再硬塞夜間動物園，把玩水與轉換飯店做好。",
     map: "https://www.google.com/maps/search/?api=1&query=Singapore+Zoo",
@@ -106,6 +109,7 @@ const days = [
     pace: "高強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Universal_Studios_Singapore_globe_(125026).jpg?width=1200",
     imageCredit: "Photo: Wikimedia Commons",
+    weather: { icon: "cloud-lightning", label: "午後雷陣雨", temp: "26-32°C" },
     summary:
       "今天把重心給 Universal Studios Singapore。Singapore Oceanarium 可排在上午開園前後或傍晚短逛，若排隊與天氣消耗太大，就把海洋館改成備案。",
     map: "https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore",
@@ -139,6 +143,7 @@ const days = [
     pace: "低強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jewel_Changi_Airport_Rain_Vortex_3.jpg?width=1200",
     imageCredit: "Photo: Bennv3771 / Wikimedia Commons",
+    weather: { icon: "cloud-rain", label: "濕熱有雨", temp: "25-31°C" },
     summary:
       "回程航班 13:10，今天只排機場內的 Jewel Changi。核心是準時、輕鬆、不要把最後一天變成趕場。",
     map: "https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport",
@@ -320,6 +325,13 @@ function renderDay() {
   dayPanel.innerHTML = `
     <article class="day-header">
       <img src="${day.image}" alt="${day.title}" />
+      <div class="weather-badge" aria-label="${day.weather.label}，${day.weather.temp}">
+        ${icon(day.weather.icon)}
+        <span>
+          <strong>${day.weather.label}</strong>
+          <small>${day.weather.temp}</small>
+        </span>
+      </div>
       <div class="day-header__body">
         <span class="photo-credit">${day.imageCredit}</span>
         <p class="kicker">${day.date} · ${day.weekday} · ${day.theme}</p>
@@ -401,6 +413,18 @@ function renderDay() {
   `;
 }
 
+function scrollToDayBanner() {
+  window.requestAnimationFrame(() => {
+    const banner = dayPanel.querySelector(".day-header");
+    const header = document.querySelector(".app-header");
+    const dayTabs = document.querySelector(".day-tabs");
+    if (!banner || !header || !dayTabs) return;
+    const stickyOffset = header.offsetHeight + dayTabs.offsetHeight + 8;
+    const top = banner.getBoundingClientRect().top + window.scrollY - stickyOffset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  });
+}
+
 function renderInfoPanel() {
   const panel = panels[activeView];
   infoPanel.innerHTML = `
@@ -436,7 +460,7 @@ tabs.addEventListener("click", (event) => {
   if (!button) return;
   activeDay = Number(button.dataset.day);
   render();
-  dayPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToDayBanner();
 });
 
 toolButtons.forEach((button) => {
