@@ -381,6 +381,62 @@ const panels = {
       ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"]
     ]
   },
+  sentosa: {
+    title: "聖淘沙快逛指南",
+    intro: "整理自 Journey.tw 的聖淘沙景點攻略，將 15 個景點與交通資訊濃縮成適合在島上快速查閱的版本。",
+    sections: [
+      {
+        icon: "train-front",
+        title: "如何前往聖淘沙",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "Sentosa Express (快捷電車)：最方便。從 VivoCity 3 樓搭乘，停靠名勝世界、英比奧、海灘站。",
+          "Singapore Cable Car (纜車)：景觀最美。分花柏山線（接本島）與聖淘沙線（島內移動）。",
+          "Sentosa Boardwalk (步行)：從 VivoCity 沿步道走進島內，風景不錯且省錢。",
+          "巴士或計程車：直接經聖淘沙閘口進入。8 人團建議分兩台 Grab 直達飯店或景點。"
+        ]
+      },
+      {
+        icon: "layout",
+        title: "核心必玩景點",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Universal_Studios_Singapore_globe_(125026).jpg?width=720",
+        items: [
+          "Universal Studios Singapore (USS)：全球最小環球影城，含變形金剛、古埃及等 7 大區。",
+          "Singapore Oceanarium (海洋館)：原 S.E.A.，世界級巨型水槽，看超過 10 萬隻海洋生物。",
+          "Skyline Luge (斜坡滑車)：四條賽道自選，包含空中吊椅 (Skyride)，大人小孩都愛。",
+          "Wings of Time (時光之翼)：海上的夜間燈光水舞秀，是島上經典的收尾活動。",
+          "SkyHelix Sentosa：新加坡最高露天景觀旋轉塔，升高 79 公尺俯瞰全島景觀。"
+        ]
+      },
+      {
+        icon: "sun",
+        title: "三大海灘區域",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "Siloso Beach (西樂索海灘)：最熱鬧、充滿活力，多數水上活動與海灘酒吧集中於此。",
+          "Palawan Beach (巴拉灣海灘)：最適合親子，有吊橋連接「亞洲大陸最南端」。",
+          "Tanjong Beach (丹戎海灘)：相對寧靜、度假氛圍濃，適合喜歡靜靜曬太陽的人。"
+        ]
+      },
+      {
+        icon: "lightbulb",
+        title: "玩樂與住宿建議",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "Sentosa Fun Pass：若想跑多個付費景點，建議購買點數型的 Fun Pass 會比較省錢。",
+          "住宿兩天一夜：文章建議在島上住一晚能玩得更徹底（如香格里拉聖淘沙或 Equarius）。",
+          "VivoCity：進島前的最後補給站，有百貨、超市與許多知名美食（如亞坤、美食街）。",
+          "Adventure Cove：水上探險樂園，有高速滑道與浮潛體驗，也是避暑好去處。"
+        ]
+      }
+    ],
+    links: [
+      ["Journey.tw 原文", "https://journey.tw/ci-singapore/"],
+      ["Sentosa 官方網站", "https://www.sentosa.com.sg/"],
+      ["Resorts World Sentosa", "https://www.rwsentosa.com/"],
+      ["VivoCity", "https://www.vivocity.com.sg/"]
+    ]
+  },
   exchange: {
     title: "匯率計算機",
     rate: 24.76,
