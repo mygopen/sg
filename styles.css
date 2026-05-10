@@ -102,44 +102,9 @@ a {
   line-height: 1.65;
 }
 
-.trip-card,
 .day-panel,
 .info-panel {
   margin: 16px;
-}
-
-.trip-card {
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: var(--shadow);
-}
-
-.flight-grid {
-  display: grid;
-  gap: 14px;
-}
-
-.flight-grid .label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--blue);
-}
-
-.flight-grid strong,
-.flight-grid small {
-  display: block;
-}
-
-.flight-grid strong {
-  font-size: 0.98rem;
-}
-
-.flight-grid small {
-  margin-top: 5px;
-  color: var(--muted);
-  line-height: 1.45;
 }
 
 .day-tabs {
@@ -429,10 +394,6 @@ a {
 }
 
 @media (min-width: 480px) {
-  .flight-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .note-grid {
     grid-template-columns: 1fr 1fr;
   }
