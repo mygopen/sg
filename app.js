@@ -223,27 +223,98 @@ const panels = {
           "Gojek：叫車備案，適合比價與補車源。",
           "Google Maps / Citymapper：查 MRT、步行時間與景點動線；出發前可先收藏飯店與每日景點。"
         ]
+      },
+      {
+        icon: "train-front",
+        title: "交通指南",
+        items: [
+          "MRT 適合濱海灣、市區與樟宜機場移動；先看 LTA 官方 MRT/LRT system map，確認轉乘站與步行距離。",
+          "8 人同行叫車通常要分 2 台車；雨天、晚餐後、環球影城散場時段會加價或等較久，建議提早 10-15 分鐘叫車。",
+          "建議安裝 Grab、CDG Zig、Gojek。Grab 覆蓋廣，CDG Zig 可叫 ComfortDelGro 計程車，Gojek 可當價格與車源備案。",
+          "樟宜機場、MBS、聖淘沙都可以搭車，但聖淘沙進出可能有指定上車點；上車前確認 pick-up point，避免全家拖行李走回頭路。"
+        ]
       }
     ],
     links: [
       ["Visit Singapore", "https://www.visitsingapore.com/"],
       ["Changi Airport", "https://www.changiairport.com/"],
-      ["ICA SG Arrival Card", "https://eservices.ica.gov.sg/sgarrivalcard/"]
-    ]
-  },
-  transport: {
-    title: "交通指南",
-    items: [
-      "MRT 適合濱海灣、市區與樟宜機場移動；先看 LTA 官方 MRT/LRT system map，確認轉乘站與步行距離。",
-      "8 人同行叫車通常要分 2 台車；雨天、晚餐後、環球影城散場時段會加價或等較久，建議提早 10-15 分鐘叫車。",
-      "建議安裝 Grab、CDG Zig、Gojek。Grab 覆蓋廣，CDG Zig 可叫 ComfortDelGro 計程車，Gojek 可當價格與車源備案。",
-      "樟宜機場、MBS、聖淘沙都可以搭車，但聖淘沙進出可能有指定上車點；上車前確認 pick-up point，避免全家拖行李走回頭路。"
-    ],
-    links: [
+      ["ICA SG Arrival Card", "https://eservices.ica.gov.sg/sgarrivalcard/"],
       ["LTA MRT System Map", "https://www.lta.gov.sg/content/ltaweb/en/public-transport/mrt-and-lrt/mrt-system-map.html"],
       ["Grab Singapore", "https://transport.grab.com/"],
       ["CDG Zig", "https://www.cdgtaxi.com.sg/cdg-zig/"],
       ["Gojek Singapore", "https://www.gojek.com/sg/"]
+    ]
+  },
+  airport: {
+    title: "樟宜機場快逛指南",
+    intro: "整理自 Journey.tw 的樟宜機場開箱文，改成回程當天在手機上快速查的版本；重點放在航廈移動、Jewel、親子放電、採買、退稅與登機緩衝。",
+    sections: [
+      {
+        icon: "tram-front",
+        title: "航廈移動",
+        image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "T1、T2、T3 彼此連通，可步行或搭 Skytrain 移動；如果全家帶行李，先確認出發航廈再決定要不要跨航廈逛。",
+          "T4 為獨立航廈，通常需從 T2 搭接駁巴士前往；不建議回程日為了逛 T4 來回奔波。",
+          "先下載 Changi App 或使用官方地圖查店家、設施、登機門與航班狀態。"
+        ]
+      },
+      {
+        icon: "wifi",
+        title: "到機場先做",
+        image: "https://images.unsplash.com/photo-1490430657723-4d607c1503fc?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "連上樟宜機場免費 Wi-Fi，並把航班、登機門與報到櫃台截圖給成人群組。",
+          "若回程有購物退稅，先把退稅單、護照、商品集中管理；需要查驗的商品不要太早托運。",
+          "有問題直接找旅客服務櫃台；文章也提醒部分服務人員可中文溝通。"
+        ]
+      },
+      {
+        icon: "shopping-bag",
+        title: "美食與採買",
+        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "各航廈都有餐廳、美食街與咖啡店，適合把 Day5 午餐做成輕食，不要壓縮 13:10 回程登機時間。",
+          "免稅店、3C、美妝、運動品牌、伴手禮與星巴克城市杯都可列為最後採買清單。",
+          "T2 美食街與機場商店常見新加坡風味餐點與伴手禮，刷卡比收一堆零錢更省心。"
+        ]
+      },
+      {
+        icon: "baby",
+        title: "孩子放電與休息",
+        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "T1、T2、T3 轉機區都有兒童遊戲區；若已出境又還有時間，可讓 10-12 歲孩子短暫放電。",
+          "航廈內座位很多，也常見免費按摩椅；大人可以輪流顧行李與休息。",
+          "主題花園可當雨天備案：T1 仙人掌花園、T2 夢幻花園與蘭花園、T3 蝴蝶園。"
+        ]
+      },
+      {
+        icon: "receipt",
+        title: "退稅與出境",
+        image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "抵達機場後先決定是否要退稅；退稅商品若需查驗，請在托運前處理。",
+          "樟宜機場有自助退稅機台，流程通常是掃護照與退稅單、確認資料，再依指示完成查驗與退款。",
+          "8 人團建議 10:30 前進入報到/出境節奏，Jewel 拍照採買不要拖到最後一刻。"
+        ]
+      },
+      {
+        icon: "sparkles",
+        title: "Jewel 星耀樟宜",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jewel_Changi_Airport_Rain_Vortex_3.jpg?width=720",
+        items: [
+          "Jewel 連接 T1/T2/T3，核心亮點是 Rain Vortex 雨漩渦與森林谷，適合回程日當機場景點收尾。",
+          "Jewel 有餐廳、商店、寶可夢中心與 Canopy Park；帶孩子可優先雨漩渦、寶可夢中心、簡單伴手禮。",
+          "雨漩渦一般白天開放，晚間才有聲光秀；你們 13:10 回程，重點放在白天拍照與準時回航廈。"
+        ]
+      }
+    ],
+    links: [
+      ["Journey.tw 原文", "https://journey.tw/changi-airport/"],
+      ["Changi Airport 官方地圖", "https://www.changiairport.com/en/maps.html"],
+      ["Changi App", "https://www.changiairport.com/en/download-app.html"],
+      ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"]
     ]
   },
   exchange: {
@@ -492,6 +563,7 @@ function renderInfoPanel() {
   infoPanel.innerHTML = `
     <article class="info-card">
       <h2>${panel.title}</h2>
+      ${panel.intro ? `<p class="panel-intro">${panel.intro}</p>` : ""}
       ${
         panel.sections
           ? `
@@ -500,6 +572,11 @@ function renderInfoPanel() {
                 .map(
                   (section) => `
                     <section class="info-section">
+                      ${
+                        section.image
+                          ? `<img class="info-section__image" src="${section.image}" alt="${section.title}" loading="lazy" />`
+                          : ""
+                      }
                       <div class="info-section__heading">
                         ${icon(section.icon)}
                         <h3>${section.title}</h3>

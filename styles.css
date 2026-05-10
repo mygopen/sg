@@ -684,6 +684,12 @@ a:focus-visible {
   font-size: 1.25rem;
 }
 
+.panel-intro {
+  margin: -4px 0 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .info-panel.is-standalone {
   margin-top: 16px;
 }
@@ -698,10 +704,20 @@ a:focus-visible {
 }
 
 .info-section {
+  overflow: hidden;
   padding: 14px;
   border: 1px solid #e0e7ff;
   border-radius: var(--radius-card);
   background: linear-gradient(135deg, #ffffff, #f5f7ff);
+}
+
+.info-section__image {
+  display: block;
+  width: calc(100% + 28px);
+  height: 138px;
+  margin: -14px -14px 12px;
+  object-fit: cover;
+  background: #e2e8f0;
 }
 
 .info-section__heading {
