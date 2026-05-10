@@ -19,15 +19,17 @@ const days = [
       ["14:30", "Marina Bay Sands 入住與休息", "先洗澡、整理泳衣與晚間小包。房間若未好，可寄放行李後到商場輕食。"],
       ["17:00", "飯店泳池或購物中心慢慢恢復", "兒童先放電但不要過量，第一晚重點是調整節奏與避免中暑。"],
       ["18:20", "魚尾獅公園與濱海灣步道", "傍晚光線漂亮，從 Merlion Park 拍照後沿著灣區散步，孩子不想走可改搭計程車短移動。"],
-      ["20:00", "Spectra 水舞或濱海灣夜景", "若精神好看水舞，若疲累就回飯店。第一天不要硬排太晚。"]
+      ["19:30", "珍寶海鮮 Riverside Point 晚餐", "第一晚安排辣椒螃蟹與海鮮桌菜，建議先訂位並點微辣版本；8 人可分 2 台車從灣區過去。"],
+      ["21:00", "Spectra 水舞或濱海灣夜景", "若精神好看水舞，若疲累就回飯店。第一天不要硬排太晚。"]
     ],
     tips: [
-      ["親子節奏", "第一天孩子通常興奮但累，晚餐選 Marina Bay Sands / The Shoppes 內部最穩。"],
+      ["親子節奏", "第一天孩子通常興奮但累，珍寶海鮮要先訂位；若全員太累，可改成 MBS 內用餐。"],
       ["交通", "8 人移動以 2 台車最省心；濱海灣周邊步行舒服，但雨後地面濕滑。"],
       ["拍照點", "魚尾獅公園、Helix Bridge、Apple Marina Bay Sands 外側都適合全家合照。"]
     ],
     sources: [
       ["Merlion Park", "https://www.visitsingapore.com/see-do-singapore/recreation-leisure/viewpoints/merlion-park/"],
+      ["JUMBO Seafood", "https://www.jumboseafood.com.sg/"],
       ["Marina Bay Sands", "https://www.marinabaysands.com/"]
     ]
   },
@@ -52,7 +54,8 @@ const days = [
       ["13:00", "前往 Science Centre Singapore", "從市區搭車約 25-35 分鐘；MRT 可到 Jurong East 再步行，但 8 人搭車較省力。"],
       ["14:00", "新加坡科學館", "互動展、鏡子迷宮、KidsSTOP 附近資源適合分齡；12 歲孩子可偏向科學互動與 Omni-Theatre。"],
       ["17:15", "回飯店游泳休息", "晚餐前保留 90 分鐘在飯店放空，避免隔天搬飯店時全員電量歸零。"],
-      ["19:45", "Garden Rhapsody 燈光秀", "體力允許再回 Supertree Grove 看燈光秀；不想走動就留在 MBS 附近吃飯。"]
+      ["18:45", "松發肉骨茶 Clarke Quay 晚餐", "把肉骨茶安排在第二天晚餐，離 MBS 與濱海灣都不遠；胡椒湯熱但補體力，孩子可搭配油條、滷味與白飯。"],
+      ["20:15", "Garden Rhapsody 燈光秀", "體力允許再回 Supertree Grove 看燈光秀；不想走動就留在 Clarke Quay 或 MBS 附近散步。"]
     ],
     tips: [
       ["避暑", "8 月濕熱，上午戶外、下午室內是最穩的親子節奏。"],
@@ -62,6 +65,7 @@ const days = [
     sources: [
       ["Gardens by the Bay", "https://www.gardensbythebay.com.sg/"],
       ["Science Centre Singapore", "https://www.science.edu.sg/"],
+      ["Song Fa Bak Kut Teh", "https://songfa.com.sg/"],
       ["Garden Rhapsody", "https://www.gardensbythebay.com.sg/en/things-to-do/calendar-of-events/garden-rhapsody.html"]
     ]
   },
@@ -152,7 +156,7 @@ const days = [
       ["08:15", "前往樟宜機場", "聖淘沙到機場抓 35-50 分鐘，尖峰或雨天再加緩衝。"],
       ["09:10", "Jewel Changi Airport", "先看 HSBC Rain Vortex，再逛 Canopy Park 或買伴手禮。行李多時先找寄放或航空櫃台。"],
       ["10:30", "報到與出境", "國際線建議至少起飛前 2.5 小時完成報到節奏，8 人團更要早。"],
-      ["11:15", "松發肉骨茶 Jewel 午餐", "安排在 Jewel Changi B2 分店，吃完再進行最後採買。肉骨茶適合當收尾午餐，動線不需要離開機場。"],
+      ["11:15", "Jewel 輕食與最後採買", "把時間留給雨漩渦、伴手禮與簡單午餐；避免正式餐廳排隊壓縮登機緩衝。"],
       ["13:10", "新加坡 → 台北", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"]
     ],
     tips: [
@@ -161,7 +165,6 @@ const days = [
       ["退稅", "若有購物退稅，請把單據與商品集中給一位成人管理。"]
     ],
     sources: [
-      ["Song Fa Bak Kut Teh Jewel", "https://www.jewelchangiairport.com/en/dine/song-fa-bak-kut-teh.html"],
       ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"],
       ["Changi Airport", "https://www.changiairport.com/"]
     ]
@@ -257,6 +260,7 @@ const stopMapQueries = {
   "Marina Bay Sands 入住與休息": "Marina Bay Sands Singapore",
   "飯店泳池或購物中心慢慢恢復": "Marina Bay Sands Singapore",
   "魚尾獅公園與濱海灣步道": "Merlion Park Singapore",
+  "珍寶海鮮 Riverside Point 晚餐": "JUMBO Seafood Riverside Point Singapore",
   "Spectra 水舞或濱海灣夜景": "Spectra A Light and Water Show Singapore",
   "早餐與步行到 Gardens by the Bay": "Gardens by the Bay Singapore",
   "Flower Dome / Cloud Forest": "Flower Dome Cloud Forest Singapore",
@@ -264,6 +268,7 @@ const stopMapQueries = {
   "前往 Science Centre Singapore": "Science Centre Singapore",
   "新加坡科學館": "Science Centre Singapore",
   "回飯店游泳休息": "Marina Bay Sands Singapore",
+  "松發肉骨茶 Clarke Quay 晚餐": "Song Fa Bak Kut Teh 11 New Bridge Road Singapore",
   "Garden Rhapsody 燈光秀": "Garden Rhapsody Supertree Grove Singapore",
   "退房前整理行李": "Marina Bay Sands Singapore",
   "出發前往 Singapore Zoo": "Singapore Zoo",
@@ -284,7 +289,7 @@ const stopMapQueries = {
   "前往樟宜機場": "Singapore Changi Airport",
   "Jewel Changi Airport": "Jewel Changi Airport",
   "報到與出境": "Singapore Changi Airport Terminal 1",
-  "松發肉骨茶 Jewel 午餐": "Song Fa Bak Kut Teh Jewel Changi Airport",
+  "Jewel 輕食與最後採買": "Jewel Changi Airport Food",
   "新加坡 → 台北": "Singapore Changi Airport"
 };
 
@@ -306,7 +311,9 @@ const thumbImages = {
   rws: commonsImage("Universal_Studios_Singapore_globe_(125026).jpg"),
   uss: commonsImage("Universal_Studios_Singapore_globe_(125026).jpg"),
   oceanarium: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=360&q=78",
-  jewel: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg")
+  jewel: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg"),
+  seafood: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=360&q=78",
+  bakKutTeh: "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=360&q=78"
 };
 
 const stopThumbImages = {
@@ -315,6 +322,7 @@ const stopThumbImages = {
   "Marina Bay Sands 入住與休息": thumbImages.mbs,
   "飯店泳池或購物中心慢慢恢復": thumbImages.mbs,
   "魚尾獅公園與濱海灣步道": thumbImages.merlion,
+  "珍寶海鮮 Riverside Point 晚餐": thumbImages.seafood,
   "Spectra 水舞或濱海灣夜景": thumbImages.mbs,
   "早餐與步行到 Gardens by the Bay": thumbImages.gardens,
   "Flower Dome / Cloud Forest": thumbImages.flower,
@@ -322,6 +330,7 @@ const stopThumbImages = {
   "前往 Science Centre Singapore": thumbImages.science,
   "新加坡科學館": thumbImages.science,
   "回飯店游泳休息": thumbImages.mbs,
+  "松發肉骨茶 Clarke Quay 晚餐": thumbImages.bakKutTeh,
   "Garden Rhapsody 燈光秀": thumbImages.gardens,
   "退房前整理行李": thumbImages.mbs,
   "出發前往 Singapore Zoo": thumbImages.zoo,
@@ -342,7 +351,7 @@ const stopThumbImages = {
   "前往樟宜機場": thumbImages.changi,
   "Jewel Changi Airport": thumbImages.jewel,
   "報到與出境": thumbImages.changi,
-  "松發肉骨茶 Jewel 午餐": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=360&q=78",
+  "Jewel 輕食與最後採買": thumbImages.jewel,
   "新加坡 → 台北": thumbImages.flight
 };
 
