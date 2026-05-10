@@ -246,7 +246,8 @@ const panels = {
   exchange: {
     title: "匯率計算機",
     rate: 24.76,
-    updated: "參考 2026/5/7 中間價，實際刷卡/換匯以銀行或平台為準。"
+    updated: "預設參考 2026/5/7 中間價；可按重新整理抓即時匯率。",
+    source: "https://open.er-api.com/v6/latest/SGD"
   }
 };
 
@@ -571,7 +572,13 @@ function renderExchangePanel(panel) {
 
       <label class="rate-field">
         <span>匯率設定</span>
-        <input id="exchange-rate" inputmode="decimal" type="text" value="${panel.rate}" />
+        <div class="rate-control">
+          <input id="exchange-rate" inputmode="decimal" type="text" value="${panel.rate}" aria-label="1 新加坡幣兌換台幣匯率" />
+          <button id="refresh-rate" class="refresh-rate" type="button" aria-label="重新整理即時匯率" title="重新整理即時匯率">
+            ${icon("refresh-cw")}
+          </button>
+        </div>
+        <small id="rate-status">目前使用預設匯率。實際刷卡/換匯以銀行或平台為準。</small>
       </label>
 
       <div class="exchange-grid">
@@ -611,16 +618,19 @@ function bindExchangeCalculator() {
   const rateInput = document.querySelector("#exchange-rate");
   const sgdInput = document.querySelector("#sgd-input");
   const twdInput = document.querySelector("#twd-input");
+  const refreshButton = document.querySelector("#refresh-rate");
+  const rateStatus = document.querySelector("#rate-status");
   const quickButtons = [...document.querySelectorAll(".quick-rate")];
   if (!rateInput || !sgdInput || !twdInput) return;
 
-  const rate = () => Number(rateInput.value) || panels.exchange.rate;
+  const parseAmount = (value) => Number(String(value).replace(/,/g, "")) || 0;
+  const rate = () => parseAmount(rateInput.value) || panels.exchange.rate;
   const syncFromSgd = () => {
-    const value = Number(sgdInput.value) || 0;
+    const value = parseAmount(sgdInput.value);
     twdInput.value = Math.round(value * rate());
   };
   const syncFromTwd = () => {
-    const value = Number(twdInput.value) || 0;
+    const value = parseAmount(twdInput.value);
     sgdInput.value = formatCurrency(value / rate(), "SGD").replace(/,/g, "");
   };
   const refreshQuickRates = () => {
@@ -629,13 +639,43 @@ function bindExchangeCalculator() {
       button.querySelector("span").textContent = `NT$${formatCurrency(amount * rate(), "TWD")}`;
     });
   };
+  const setStatus = (message, state = "neutral") => {
+    if (!rateStatus) return;
+    rateStatus.textContent = message;
+    rateStatus.dataset.state = state;
+  };
+  const refreshLiveRate = async () => {
+    if (!refreshButton) return;
+    refreshButton.disabled = true;
+    refreshButton.classList.add("is-loading");
+    setStatus("正在取得即時匯率...", "loading");
+    try {
+      const response = await fetch(panels.exchange.source, { cache: "no-store" });
+      if (!response.ok) throw new Error("rate fetch failed");
+      const data = await response.json();
+      const nextRate = Number(data?.rates?.TWD);
+      if (!Number.isFinite(nextRate) || nextRate <= 0) throw new Error("TWD rate missing");
+      rateInput.value = nextRate.toFixed(2);
+      syncFromSgd();
+      refreshQuickRates();
+      const updated = data.time_last_update_utc ? `更新時間：${data.time_last_update_utc}` : "已更新即時匯率。";
+      setStatus(`${updated} 來源：open.er-api.com`, "success");
+    } catch (error) {
+      setStatus("即時匯率暫時無法取得，仍可手動輸入匯率。", "error");
+    } finally {
+      refreshButton.disabled = false;
+      refreshButton.classList.remove("is-loading");
+    }
+  };
 
   rateInput.addEventListener("input", () => {
     syncFromSgd();
     refreshQuickRates();
+    setStatus("已使用手動輸入匯率。", "neutral");
   });
   sgdInput.addEventListener("input", syncFromSgd);
   twdInput.addEventListener("input", syncFromTwd);
+  refreshButton?.addEventListener("click", refreshLiveRate);
   quickButtons.forEach((button) => {
     button.addEventListener("click", () => {
       sgdInput.value = button.dataset.sgd;

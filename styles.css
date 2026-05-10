@@ -545,11 +545,64 @@ a:focus-visible {
   font-weight: 800;
 }
 
+.rate-control {
+  display: grid;
+  grid-template-columns: 1fr 48px;
+  gap: 8px;
+}
+
+.refresh-rate {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border: 1px solid #c7d2fe;
+  border-radius: var(--radius-control);
+  color: var(--primary);
+  background: #eef2ff;
+  box-shadow: var(--shadow);
+}
+
+.refresh-rate:hover {
+  transform: translateY(-1px);
+  color: #fff;
+  background: var(--gradient-brand);
+  box-shadow: var(--button-shadow);
+}
+
+.refresh-rate:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.refresh-rate.is-loading svg {
+  animation: spin 900ms linear infinite;
+}
+
+.rate-field small {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.rate-field small[data-state="success"] {
+  color: var(--success);
+}
+
+.rate-field small[data-state="error"] {
+  color: var(--coral);
+}
+
 .rate-field input:focus,
 .money-field input:focus {
   border-color: var(--primary);
   outline: 2px solid rgba(79, 70, 229, 0.22);
   outline-offset: 2px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .exchange-grid {
