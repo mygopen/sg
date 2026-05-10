@@ -25,7 +25,8 @@ const days = [
     tips: [
       ["親子節奏", "第一天孩子通常興奮但累，珍寶海鮮要先訂位；若全員太累，可改成 MBS 內用餐。"],
       ["交通", "8 人移動以 2 台車最省心；濱海灣周邊步行舒服，但雨後地面濕滑。"],
-      ["拍照點", "魚尾獅公園、Helix Bridge、Apple Marina Bay Sands 外側都適合全家合照。"]
+      ["拍照點", "魚尾獅公園、Helix Bridge、Apple Marina Bay Sands 外側都適合全家合照。"],
+      ["飲水準備", "新加坡戶外濕熱，進飯店前可在商場超市先買大瓶礦泉水備用，省錢又方便。"]
     ],
     sources: [
       ["Merlion Park", "https://www.visitsingapore.com/see-do-singapore/recreation-leisure/viewpoints/merlion-park/"],
@@ -60,7 +61,8 @@ const days = [
     tips: [
       ["避暑", "8 月濕熱，上午戶外、下午室內是最穩的親子節奏。"],
       ["科學館提醒", "Science Centre 通常週一休館，這天是星期日，安排很剛好。"],
-      ["雨備", "午後雷陣雨時，Gardens 展館、MBS 商場與 Science Centre 都能銜接。"]
+      ["雨備", "午後雷陣雨時，Gardens 展館、MBS 商場與 Science Centre 都能銜接。"],
+      ["穿著建議", "科學館與花園展館內冷氣極強，建議幫孩子多備一件薄長袖，避免室內外溫差感冒。"]
     ],
     sources: [
       ["Gardens by the Bay", "https://www.gardensbythebay.com.sg/"],
@@ -96,7 +98,8 @@ const days = [
     tips: [
       ["動線", "動物園與聖淘沙在不同方向，先回 MBS 取行李再進聖淘沙最清楚。"],
       ["體力管理", "不建議同一天再接 Night Safari，隔天環球影城會更需要體力。"],
-      ["孩子分工", "讓 12 歲孩子各負責一張園區地圖或表演時間，參與感會更高。"]
+      ["孩子分工", "讓 12 歲孩子各負責一張園區地圖或表演時間，參與感會更高。"],
+      ["防蚊防曬", "動物園植被多、蚊蟲也多，建議隨身攜帶防蚊液，並在樹蔭外區域定時補擦防曬。"]
     ],
     sources: [
       ["Singapore Zoo", "https://www.mandai.com/en/singapore-zoo.html"],
@@ -129,7 +132,8 @@ const days = [
     tips: [
       ["優先順序", "USS 是今天主菜，Oceanarium 是漂亮加分項，不要為了全收集犧牲孩子心情。"],
       ["票券", "暑假與週二仍可能排隊，8 人團建議先買票並評估 Express Pass。"],
-      ["名稱提醒", "原 S.E.A. Aquarium 已升級為 Singapore Oceanarium，搜尋票券時兩個名稱可能都會出現。"]
+      ["名稱提醒", "原 S.E.A. Aquarium 已升級為 Singapore Oceanarium，搜尋票券時兩個名稱可能都會出現。"],
+      ["置物櫃使用", "環球影城部分刺激設施需寄放背包，建議準備好 10 元面額或行動支付，並記住自設密碼。"]
     ],
     sources: [
       ["Universal Studios Singapore", "https://www.rwsentosa.com/en/attractions/universal-studios-singapore"],
@@ -162,7 +166,8 @@ const days = [
     tips: [
       ["時間底線", "10:30 前進入報到流程會比較穩，Jewel 不要逛到忘記登機。"],
       ["雨備", "Jewel 是室內收尾，適合最後一天不用再擔心天氣。"],
-      ["退稅", "若有購物退稅，請把單據與商品集中給一位成人管理。"]
+      ["退稅", "若有購物退稅，請把單據與商品集中給一位成人管理。"],
+      ["照片備份", "在候機或機上可以用機場 Wi-Fi 先將這幾天的家庭照片備份到雲端，為旅程留下完美句點。"]
     ],
     sources: [
       ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"],
