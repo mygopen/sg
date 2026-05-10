@@ -236,6 +236,79 @@ const panels = {
       ["Gojek Singapore", "https://www.gojek.com/sg/"]
     ]
   },
+  marina: {
+    title: "濱海灣快逛指南",
+    intro: "整理自 Journey.tw 的 Marina Bay 濱海灣一日遊文章，改成在灣區散步時可以快速查看的分類版；重點放在交通、拍照地標、雨天室內、夜景表演、花園展館與晚餐收尾。",
+    sections: [
+      {
+        icon: "train-front",
+        title: "怎麼到濱海灣",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_and_Merlion.jpg?width=720",
+        items: [
+          "最直覺的地鐵站是 Bayfront（DT16 / CE1），出站後可接 Marina Bay Sands、The Shoppes 與 Gardens by the Bay。",
+          "8 人親子團若天氣熱或下雨，MBS、魚尾獅、珍寶海鮮之間可分 2 台 Grab，不必硬走完整圈。",
+          "晚上散步可用「MBS → Helix Bridge → Merlion Park」或反向走，記得把回程上車點先看好。"
+        ]
+      },
+      {
+        icon: "camera",
+        title: "經典地標拍照",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_and_Merlion.jpg?width=720",
+        items: [
+          "Marina Bay Sands 是灣區最明顯地標；要拍全景可站在魚尾獅公園或濱海灣步道對岸。",
+          "魚尾獅公園是第一次到新加坡必拍點，傍晚光線柔和，但人潮多，建議快速拍完就移動。",
+          "Helix Bridge 連接 MBS 與灣區步道，橋上觀景台很好拍城市線條，夜間 LED 亮起更漂亮。"
+        ]
+      },
+      {
+        icon: "shopping-bag",
+        title: "室內避暑與購物",
+        image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "The Shoppes at Marina Bay Sands 是雨天和午後熱浪的好緩衝，餐廳、咖啡、洗手間與冷氣都方便。",
+          "ArtScience Museum 外型像蓮花，展覽結合藝術、科學與科技，適合孩子需要室內互動時當備案。",
+          "LV 水晶亭在水面上很醒目，不一定要購物，路過拍照就很有濱海灣感。"
+        ]
+      },
+      {
+        icon: "sparkles",
+        title: "夜景與水舞",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "Spectra 水舞在 MBS 外側 Event Plaza 觀看，文章列出常見場次為 20:00、21:00，週五週六另有 22:00。",
+          "看完水舞後可沿灣區步道慢走，或直接回 MBS / 叫車回飯店，第一天不需要硬撐太晚。",
+          "Esplanade 外型像榴槤，是灣區另一個好辨識地標；走到對岸可拍 MBS 與整片水岸。"
+        ]
+      },
+      {
+        icon: "leaf",
+        title: "花園展館與超級樹",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Supertree_Grove%2C_Gardens_by_the_Bay%2C_Singapore.jpg?width=720",
+        items: [
+          "Cloud Forest 有大型室內瀑布與雲霧步道，適合炎熱午後避暑，也很適合孩子拍照探索。",
+          "Flower Dome 是冷室花園，文章提醒館內維持涼爽溫度，逛展時孩子可以帶薄外套。",
+          "Supertree Grove 與 OCBC Skyway 是濱海灣花園代表畫面；晚上 Garden Rhapsody 免費燈光秀很值得排入。"
+        ]
+      },
+      {
+        icon: "utensils",
+        title: "散步後吃什麼",
+        image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=720&q=78",
+        items: [
+          "MBS 裡餐廳選擇多，適合孩子累了就地解決；要吃正式餐廳建議先訂位。",
+          "Lau Pa Sat 老巴剎在金融區，文章列為濱海灣附近美食點，適合想吃沙嗲、海南雞飯、叻沙等小吃。",
+          "你們 Day1 已安排珍寶海鮮，建議魚尾獅拍完後直接過去，晚餐後再看體力決定是否回灣區看水舞。"
+        ]
+      }
+    ],
+    links: [
+      ["Journey.tw 原文", "https://journey.tw/go-marina-bay/"],
+      ["Marina Bay Sands", "https://www.marinabaysands.com/"],
+      ["Gardens by the Bay", "https://www.gardensbythebay.com.sg/"],
+      ["ArtScience Museum", "https://www.marinabaysands.com/museum.html"],
+      ["Spectra", "https://www.marinabaysands.com/attractions/spectra.html"]
+    ]
+  },
   airport: {
     title: "樟宜機場快逛指南",
     intro: "整理自 Journey.tw 的樟宜機場開箱文，改成回程當天在手機上快速查的版本；重點放在航廈移動、Jewel、親子放電、採買、退稅與登機緩衝。",
