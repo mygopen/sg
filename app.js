@@ -242,6 +242,11 @@ const panels = {
       ["CDG Zig", "https://www.cdgtaxi.com.sg/cdg-zig/"],
       ["Gojek Singapore", "https://www.gojek.com/sg/"]
     ]
+  },
+  exchange: {
+    title: "匯率計算機",
+    rate: 24.76,
+    updated: "參考 2026/5/7 中間價，實際刷卡/換匯以銀行或平台為準。"
   }
 };
 
@@ -470,6 +475,10 @@ function scrollToDayBanner() {
 
 function renderInfoPanel() {
   const panel = panels[activeView];
+  if (activeView === "exchange") {
+    renderExchangePanel(panel);
+    return;
+  }
   infoPanel.innerHTML = `
     <article class="info-card">
       <h2>${panel.title}</h2>
@@ -538,6 +547,101 @@ function renderInfoPanel() {
       }
     </article>
   `;
+}
+
+function formatCurrency(value, currency) {
+  const digits = currency === "TWD" ? 0 : 2;
+  return new Intl.NumberFormat("zh-TW", {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }).format(value);
+}
+
+function renderExchangePanel(panel) {
+  const quickSgd = [5, 10, 20, 50, 100, 200];
+  infoPanel.innerHTML = `
+    <article class="info-card exchange-card">
+      <div class="exchange-hero">
+        <span class="exchange-icon">${icon("coins")}</span>
+        <div>
+          <h2>${panel.title}</h2>
+          <p>台幣 TWD 與新加坡幣 SGD 雙向換算。預設 1 SGD = <strong>${panel.rate}</strong> TWD，可依現場匯率調整。</p>
+        </div>
+      </div>
+
+      <label class="rate-field">
+        <span>匯率設定</span>
+        <input id="exchange-rate" inputmode="decimal" type="text" value="${panel.rate}" />
+      </label>
+
+      <div class="exchange-grid">
+        <label class="money-field">
+          <span>新加坡幣 SGD</span>
+          <input id="sgd-input" inputmode="decimal" type="text" value="100" />
+        </label>
+        <label class="money-field">
+          <span>台幣 TWD</span>
+          <input id="twd-input" inputmode="numeric" type="text" value="${Math.round(100 * panel.rate)}" />
+        </label>
+      </div>
+
+      <section class="quick-convert" aria-label="快速換算">
+        <h3>快速計算</h3>
+        <div class="quick-grid">
+          ${quickSgd
+            .map(
+              (amount) => `
+                <button class="quick-rate" data-sgd="${amount}">
+                  <strong>S$${amount}</strong>
+                  <span>NT$${formatCurrency(amount * panel.rate, "TWD")}</span>
+                </button>
+              `
+            )
+            .join("")}
+        </div>
+      </section>
+
+      <p class="exchange-note">${panel.updated}</p>
+    </article>
+  `;
+  bindExchangeCalculator();
+}
+
+function bindExchangeCalculator() {
+  const rateInput = document.querySelector("#exchange-rate");
+  const sgdInput = document.querySelector("#sgd-input");
+  const twdInput = document.querySelector("#twd-input");
+  const quickButtons = [...document.querySelectorAll(".quick-rate")];
+  if (!rateInput || !sgdInput || !twdInput) return;
+
+  const rate = () => Number(rateInput.value) || panels.exchange.rate;
+  const syncFromSgd = () => {
+    const value = Number(sgdInput.value) || 0;
+    twdInput.value = Math.round(value * rate());
+  };
+  const syncFromTwd = () => {
+    const value = Number(twdInput.value) || 0;
+    sgdInput.value = formatCurrency(value / rate(), "SGD").replace(/,/g, "");
+  };
+  const refreshQuickRates = () => {
+    quickButtons.forEach((button) => {
+      const amount = Number(button.dataset.sgd) || 0;
+      button.querySelector("span").textContent = `NT$${formatCurrency(amount * rate(), "TWD")}`;
+    });
+  };
+
+  rateInput.addEventListener("input", () => {
+    syncFromSgd();
+    refreshQuickRates();
+  });
+  sgdInput.addEventListener("input", syncFromSgd);
+  twdInput.addEventListener("input", syncFromTwd);
+  quickButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sgdInput.value = button.dataset.sgd;
+      syncFromSgd();
+    });
+  });
 }
 
 function render() {

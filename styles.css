@@ -456,7 +456,7 @@ a:focus-visible {
   bottom: 0;
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   width: min(100%, 520px);
   padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
@@ -478,6 +478,137 @@ a:focus-visible {
   font: inherit;
   font-size: 0.78rem;
   font-weight: 900;
+}
+
+.exchange-hero {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.exchange-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-card);
+  color: #fff;
+  background: var(--gradient-brand);
+  box-shadow: var(--button-shadow);
+}
+
+.exchange-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.exchange-hero h2 {
+  margin-bottom: 6px;
+}
+
+.exchange-hero p,
+.exchange-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.rate-field,
+.money-field {
+  display: grid;
+  gap: 7px;
+}
+
+.rate-field {
+  margin-bottom: 12px;
+}
+
+.rate-field span,
+.money-field span {
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.rate-field input,
+.money-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-weight: 800;
+}
+
+.rate-field input:focus,
+.money-field input:focus {
+  border-color: var(--primary);
+  outline: 2px solid rgba(79, 70, 229, 0.22);
+  outline-offset: 2px;
+}
+
+.exchange-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.quick-convert {
+  margin-top: 16px;
+}
+
+.quick-convert h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.quick-rate {
+  min-height: 62px;
+  border: 1px solid #c7d2fe;
+  border-radius: var(--radius-card);
+  padding: 10px;
+  color: var(--ink);
+  background: linear-gradient(135deg, #ffffff, #eef2ff);
+  font: inherit;
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+
+.quick-rate:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.quick-rate strong,
+.quick-rate span {
+  display: block;
+}
+
+.quick-rate strong {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.quick-rate span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.exchange-note {
+  margin-top: 14px;
+  font-size: 0.82rem;
 }
 
 .tool.is-active {
