@@ -523,6 +523,13 @@ function renderDay() {
   dayPanel.innerHTML = `
     <article class="day-header">
       <img src="${day.image}" alt="${day.title}" />
+      <div class="day-header-overlay">
+        <div class="day-meta">
+          <span class="day-number">Day ${day.id}</span>
+          <span class="day-theme">${day.theme}</span>
+        </div>
+        <h1 class="day-title">${day.title}</h1>
+      </div>
       <div class="weather-badge" aria-label="${day.weather.label}，${day.weather.temp}">
         ${icon(day.weather.icon)}
         <span>
