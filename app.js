@@ -530,12 +530,6 @@ function renderDay() {
           <small>${day.weather.temp}</small>
         </span>
       </div>
-      <div class="day-header__body">
-        <span class="photo-credit">${day.imageCredit}</span>
-        <p class="kicker">${day.date} · ${day.weekday} · ${day.theme}</p>
-        <h2>${day.title}</h2>
-        <p>${day.summary}</p>
-      </div>
     </article>
 
     <h2 class="section-title">一整天行程</h2>
