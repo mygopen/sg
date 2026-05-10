@@ -152,7 +152,7 @@ const days = [
       ["08:15", "前往樟宜機場", "聖淘沙到機場抓 35-50 分鐘，尖峰或雨天再加緩衝。"],
       ["09:10", "Jewel Changi Airport", "先看 HSBC Rain Vortex，再逛 Canopy Park 或買伴手禮。行李多時先找寄放或航空櫃台。"],
       ["10:30", "報到與出境", "國際線建議至少起飛前 2.5 小時完成報到節奏，8 人團更要早。"],
-      ["11:15", "機場午餐與最後採買", "讓孩子自己選小點心，避免登機前太趕。"],
+      ["11:15", "松發肉骨茶 Jewel 午餐", "安排在 Jewel Changi B2 分店，吃完再進行最後採買。肉骨茶適合當收尾午餐，動線不需要離開機場。"],
       ["13:10", "新加坡 → 台北", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"]
     ],
     tips: [
@@ -161,6 +161,7 @@ const days = [
       ["退稅", "若有購物退稅，請把單據與商品集中給一位成人管理。"]
     ],
     sources: [
+      ["Song Fa Bak Kut Teh Jewel", "https://www.jewelchangiairport.com/en/dine/song-fa-bak-kut-teh.html"],
       ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"],
       ["Changi Airport", "https://www.changiairport.com/"]
     ]
@@ -186,13 +187,19 @@ const panels = {
       "飯店泳池、兒童活動與早餐時段，入住當天直接向櫃台確認。"
     ]
   },
-  packing: {
-    title: "手機小清單",
+  transport: {
+    title: "交通指南",
     items: [
-      "每人水壺、薄外套、輕便雨衣、防曬、帽子、止汗濕紙巾。",
-      "孩子泳衣分成 Day1/Day3/Day4 可快速取用的小包，不要壓在大行李底部。",
-      "8 人團建議兩顆行動電源、至少兩張可海外付款的信用卡，以及護照照片備份。",
-      "準備一個『今天可取消』的共識，遇到雷雨或孩子累了就刪減最低優先項。"
+      "MRT 適合濱海灣、市區與樟宜機場移動；先看 LTA 官方 MRT/LRT system map，確認轉乘站與步行距離。",
+      "8 人同行叫車通常要分 2 台車；雨天、晚餐後、環球影城散場時段會加價或等較久，建議提早 10-15 分鐘叫車。",
+      "建議安裝 Grab、CDG Zig、Gojek。Grab 覆蓋廣，CDG Zig 可叫 ComfortDelGro 計程車，Gojek 可當價格與車源備案。",
+      "樟宜機場、MBS、聖淘沙都可以搭車，但聖淘沙進出可能有指定上車點；上車前確認 pick-up point，避免全家拖行李走回頭路。"
+    ],
+    links: [
+      ["LTA MRT System Map", "https://www.lta.gov.sg/content/ltaweb/en/public-transport/mrt-and-lrt/mrt-system-map.html"],
+      ["Grab Singapore", "https://transport.grab.com/"],
+      ["CDG Zig", "https://www.cdgtaxi.com.sg/cdg-zig/"],
+      ["Gojek Singapore", "https://www.gojek.com/sg/"]
     ]
   }
 };
@@ -230,7 +237,7 @@ const stopMapQueries = {
   "前往樟宜機場": "Singapore Changi Airport",
   "Jewel Changi Airport": "Jewel Changi Airport",
   "報到與出境": "Singapore Changi Airport Terminal 1",
-  "機場午餐與最後採買": "Jewel Changi Airport",
+  "松發肉骨茶 Jewel 午餐": "Song Fa Bak Kut Teh Jewel Changi Airport",
   "新加坡 → 台北": "Singapore Changi Airport"
 };
 
@@ -288,7 +295,7 @@ const stopThumbImages = {
   "前往樟宜機場": thumbImages.changi,
   "Jewel Changi Airport": thumbImages.jewel,
   "報到與出境": thumbImages.changi,
-  "機場午餐與最後採買": thumbImages.jewel,
+  "松發肉骨茶 Jewel 午餐": "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=360&q=78",
   "新加坡 → 台北": thumbImages.flight
 };
 
@@ -442,6 +449,24 @@ function renderInfoPanel() {
           )
           .join("")}
       </ul>
+      ${
+        panel.links
+          ? `
+            <div class="panel-links">
+              ${panel.links
+                .map(
+                  ([title, href]) => `
+                    <a class="link-button" href="${href}" target="_blank" rel="noreferrer">
+                      <span>${title}</span>
+                      ${icon("external-link")}
+                    </a>
+                  `
+                )
+                .join("")}
+            </div>
+          `
+          : ""
+      }
     </article>
   `;
 }

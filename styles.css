@@ -186,9 +186,7 @@ a:focus-visible {
   inset: 0;
   z-index: 1;
   content: "";
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(49, 46, 129, 0.46) 42%, rgba(15, 23, 42, 0.94) 100%),
-    linear-gradient(135deg, rgba(79, 70, 229, 0.32), rgba(124, 58, 237, 0.28));
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.03) 0%, rgba(15, 23, 42, 0.24) 38%, rgba(15, 23, 42, 0.86) 100%);
   pointer-events: none;
 }
 
@@ -519,6 +517,12 @@ a:focus-visible {
   gap: 8px;
   color: var(--muted);
   line-height: 1.48;
+}
+
+.panel-links {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 .check-list i {
