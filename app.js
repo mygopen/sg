@@ -344,11 +344,6 @@ function renderDay() {
         <p class="kicker">${day.date} · ${day.weekday} · ${day.theme}</p>
         <h2>${day.title}</h2>
         <p>${day.summary}</p>
-        <div class="meta-row">
-          <span class="pill">${icon("bed-double")} ${day.hotel}</span>
-          <span class="pill">${icon("activity")} ${day.pace}</span>
-          <a class="pill" href="${day.map}" target="_blank" rel="noreferrer">${icon("map-pin")} 地圖</a>
-        </div>
       </div>
     </article>
 
