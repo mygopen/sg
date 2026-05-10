@@ -251,7 +251,7 @@ const thumbImages = {
 };
 
 const stopThumbImages = {
-  "台北起飛": thumbImages.flight,
+  "台北 → 新加坡": thumbImages.flight,
   "抵達樟宜、入境與午餐": thumbImages.changi,
   "Marina Bay Sands 入住與休息": thumbImages.mbs,
   "飯店泳池或購物中心慢慢恢復": thumbImages.mbs,
