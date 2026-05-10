@@ -227,7 +227,7 @@ a {
 
 .stop {
   display: grid;
-  grid-template-columns: 72px 1fr;
+  grid-template-columns: 82px 1fr;
   gap: 12px;
   padding: 14px;
   border: 1px solid var(--line);
@@ -235,10 +235,24 @@ a {
   background: #fff;
 }
 
+.stop__media {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
 .stop time {
   color: var(--blue);
   font-weight: 900;
   line-height: 1.2;
+}
+
+.stop-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--soft);
 }
 
 .stop__heading {

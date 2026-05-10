@@ -229,6 +229,64 @@ const stopMapQueries = {
   "新加坡 → 台北": "Singapore Changi Airport"
 };
 
+function commonsImage(fileName, width = 320) {
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=${width}`;
+}
+
+const thumbImages = {
+  flight: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=360&q=78",
+  changi: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg"),
+  mbs: commonsImage("Marina_Bay_Sands_and_Merlion.jpg"),
+  merlion: commonsImage("Marina_Bay_Sands_and_Merlion.jpg"),
+  gardens: commonsImage("Supertree_Grove,_Gardens_by_the_Bay,_Singapore.jpg"),
+  flower: commonsImage("Supertree_Grove,_Gardens_by_the_Bay,_Singapore.jpg"),
+  science: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=360&q=78",
+  zoo: commonsImage("Entrance_-_Singapore_Zoo_(01).jpg"),
+  sentosa: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=360&q=78",
+  rasa: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=360&q=78",
+  rws: commonsImage("Universal_Studios_Singapore_globe_(125026).jpg"),
+  uss: commonsImage("Universal_Studios_Singapore_globe_(125026).jpg"),
+  oceanarium: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=360&q=78",
+  jewel: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg")
+};
+
+const stopThumbImages = {
+  "台北起飛": thumbImages.flight,
+  "抵達樟宜、入境與午餐": thumbImages.changi,
+  "Marina Bay Sands 入住與休息": thumbImages.mbs,
+  "飯店泳池或購物中心慢慢恢復": thumbImages.mbs,
+  "魚尾獅公園與濱海灣步道": thumbImages.merlion,
+  "Spectra 水舞或濱海灣夜景": thumbImages.mbs,
+  "早餐與步行到 Gardens by the Bay": thumbImages.gardens,
+  "Flower Dome / Cloud Forest": thumbImages.flower,
+  "Supertree Grove 與輕午餐": thumbImages.gardens,
+  "前往 Science Centre Singapore": thumbImages.science,
+  "新加坡科學館": thumbImages.science,
+  "回飯店游泳休息": thumbImages.mbs,
+  "Garden Rhapsody 燈光秀": thumbImages.gardens,
+  "退房前整理行李": thumbImages.mbs,
+  "出發前往 Singapore Zoo": thumbImages.zoo,
+  "新加坡動物園主園區": thumbImages.zoo,
+  "園內午餐與表演": thumbImages.zoo,
+  "回 MBS 取行李": thumbImages.mbs,
+  "移動到 Shangri-La Rasa Sentosa": thumbImages.rasa,
+  "飯店泳池與 Siloso Beach": thumbImages.sentosa,
+  "聖淘沙晚餐": thumbImages.rws,
+  "早餐與出門": thumbImages.rasa,
+  "抵達 Resorts World Sentosa": thumbImages.rws,
+  "Universal Studios Singapore": thumbImages.uss,
+  "園內午餐與降溫": thumbImages.uss,
+  "第二輪熱門設施": thumbImages.uss,
+  "Singapore Oceanarium 備案": thumbImages.oceanarium,
+  "聖淘沙散步與晚餐": thumbImages.sentosa,
+  "早餐與退房": thumbImages.rasa,
+  "前往樟宜機場": thumbImages.changi,
+  "Jewel Changi Airport": thumbImages.jewel,
+  "報到與出境": thumbImages.changi,
+  "機場午餐與最後採買": thumbImages.jewel,
+  "新加坡 → 台北": thumbImages.flight
+};
+
 const tabs = document.querySelector(".day-tabs");
 const dayPanel = document.querySelector(".day-panel");
 const infoPanel = document.querySelector(".info-panel");
@@ -281,7 +339,16 @@ function renderDay() {
         .map(
           ([time, title, text]) => `
             <article class="stop">
-              <time>${time}</time>
+              <div class="stop__media">
+                <time>${time}</time>
+                <img
+                  class="stop-thumb"
+                  src="${stopThumbImages[title] || day.image}"
+                  alt="${title}"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='${day.image}'"
+                />
+              </div>
               <div>
                 <div class="stop__heading">
                   <h3>${title}</h3>
