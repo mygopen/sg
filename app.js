@@ -13,7 +13,7 @@ const days = [
       "早班機抵達後不急著塞滿景點，先讓大人小孩恢復體力。傍晚從魚尾獅公園一路走到濱海灣，夜景與水舞很適合當第一天的開場。",
     map: "https://www.google.com/maps/search/?api=1&query=Merlion+Park+Singapore",
     stops: [
-      ["07:30", "台北起飛", "直飛新加坡。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
+      ["07:30", "台北 → 新加坡", "直飛，抵達後以飯店休息與夜景為主。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
       ["12:00", "抵達樟宜、入境與午餐", "抓 90-120 分鐘完成入境、行李、交通。8 人建議分 2 台 Grab 或預約接送。"],
       ["14:30", "Marina Bay Sands 入住與休息", "先洗澡、整理泳衣與晚間小包。房間若未好，可寄放行李後到商場輕食。"],
       ["17:00", "飯店泳池或購物中心慢慢恢復", "兒童先放電但不要過量，第一晚重點是調整節奏與避免中暑。"],
@@ -148,7 +148,7 @@ const days = [
       ["09:10", "Jewel Changi Airport", "先看 HSBC Rain Vortex，再逛 Canopy Park 或買伴手禮。行李多時先找寄放或航空櫃台。"],
       ["10:30", "報到與出境", "國際線建議至少起飛前 2.5 小時完成報到節奏，8 人團更要早。"],
       ["11:15", "機場午餐與最後採買", "讓孩子自己選小點心，避免登機前太趕。"],
-      ["13:10", "新加坡 → 台北", "直飛返程。照片備份可在候機時完成。"]
+      ["13:10", "新加坡 → 台北", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"]
     ],
     tips: [
       ["時間底線", "10:30 前進入報到流程會比較穩，Jewel 不要逛到忘記登機。"],
@@ -193,7 +193,7 @@ const panels = {
 };
 
 const stopMapQueries = {
-  "台北起飛": "Taiwan Taoyuan International Airport Terminal 2",
+  "台北 → 新加坡": "Taiwan Taoyuan International Airport Terminal 2",
   "抵達樟宜、入境與午餐": "Singapore Changi Airport",
   "Marina Bay Sands 入住與休息": "Marina Bay Sands Singapore",
   "飯店泳池或購物中心慢慢恢復": "Marina Bay Sands Singapore",
