@@ -1,3 +1,94 @@
+const transferDetails = {
+  outbound: {
+    label: "查看 8/15 完整接送資料",
+    image: "./assets/transfer-contact-full.jpg",
+    imageAlt: "以勒車隊業務聯絡資訊",
+    sections: [
+      {
+        title: "江雅欣預約｜8/15 去程送機",
+        rows: [
+          "送機日期：08/15（六）04:30 出發",
+          "航班號碼：T2-BR225",
+          "接送地址：新竹市民族路246號",
+          "聯絡人姓名：江雅欣",
+          "聯絡人電話：0910-294103",
+          "搭乘乘客名單：江雅欣、吳俊逸、吳亮妤、吳禹樂",
+          "人數：4 人",
+          "行李數：4 件（3 大 1 小）",
+          "車資：$1500 + $200 夜間加成，合計 $1700",
+          "司機：何芷涵",
+          "司機電話：0975189891",
+          "車號：RCX-9165",
+          "車型：Toyota RAV4 白"
+        ]
+      },
+      {
+        title: "葉子揚預約｜8/15 去程送機",
+        rows: [
+          "送機日期：08/15（六）04:30 出發",
+          "航班號碼：T2-BR225",
+          "接送地址：新竹市武陵路175巷10號（荷蘭村B區第5棟）",
+          "聯絡人姓名：葉子揚",
+          "聯絡人電話：0958-963-816",
+          "搭乘乘客名單：葉子揚、江曉晴、葉恩希、葉晨希",
+          "人數：4 人",
+          "行李數：4 件（3 大 1 小）",
+          "車資：$1500 + $200 夜間加成，合計 $1700",
+          "司機資料（33）：羅恩希",
+          "司機電話：0974058345",
+          "車號：TDX-8085",
+          "車型：Toyota RAV4 黃色"
+        ]
+      }
+    ],
+    note: "行程前一天晚上 20:00 助理會統一發送行程提醒。"
+  },
+  inbound: {
+    label: "查看 8/19 完整接送資料",
+    image: "./assets/transfer-contact-full.jpg",
+    imageAlt: "以勒車隊業務聯絡資訊",
+    sections: [
+      {
+        title: "江雅欣預約｜8/19 回程接機",
+        rows: [
+          "送機日期：08/19（三）17:45 抵達",
+          "航班號碼：T2-BR226",
+          "接送地址：新竹市民族路246號",
+          "聯絡人姓名：江雅欣",
+          "聯絡人電話：0910-294103",
+          "搭乘乘客名單：江雅欣、吳俊逸、吳亮妤、吳禹樂",
+          "人數：4 人",
+          "行李數：4 件（3 大 1 小）",
+          "車資：$1500",
+          "司機：何芷涵",
+          "司機電話：0975189891",
+          "車號：RCX-9165",
+          "車型：Toyota RAV4 白"
+        ]
+      },
+      {
+        title: "葉子揚預約｜8/19 回程接機",
+        rows: [
+          "送機日期：08/19（三）17:45 抵達",
+          "航班號碼：T2-BR226",
+          "接送地址：新竹市武陵路175巷10號（荷蘭村B區第5棟）",
+          "聯絡人姓名：葉子揚",
+          "聯絡人電話：0958-963-816",
+          "搭乘乘客名單：葉子揚、江曉晴、葉恩希、葉晨希",
+          "人數：4 人",
+          "行李數：4 件（3 大 1 小）",
+          "車資：$1500",
+          "司機資料（33）：羅恩希",
+          "司機電話：0974058345",
+          "車號：TDX-8085",
+          "車型：Toyota RAV4 黃色"
+        ]
+      }
+    ],
+    note: "行程前一天晚上 20:00 助理會統一發送行程提醒。"
+  }
+};
+
 const days = [
   {
     id: 1,
@@ -14,7 +105,7 @@ const days = [
       "04:30 兩組接送從新竹出發到桃園 T2，搭 BR225 抵達新加坡。前兩晚住 Holiday Inn Singapore Orchard City Centre By IHG，傍晚再進濱海灣拍魚尾獅、吃珍寶海鮮。",
     map: "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Singapore+Orchard+City+Centre",
     stops: [
-      ["04:30", "新竹兩組接送出發", "兩台 Toyota RAV4 同步從新竹出發前往桃園機場 T2，航班 BR225。每車 4 人、4 件行李（3 大 1 小）；夜間出發，前一晚先把護照與行李集中。"],
+      ["04:30", "新竹兩組接送出發", "兩台 Toyota RAV4 同步從新竹出發前往桃園機場 T2，航班 BR225。每車 4 人、4 件行李（3 大 1 小）；點開可看完整接送地址、聯絡人、司機與車牌。", transferDetails.outbound],
       ["07:30", "台北 → 新加坡（BR225）", "直飛，抵達後以飯店休息與夜景為主。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
       ["12:00", "抵達樟宜、入境與午餐", "抓 90-120 分鐘完成入境、行李與午餐。8 人加行李建議預約接送或分 2 台 Grab XL 直達 Orchard。"],
       ["14:30", "Holiday Inn Orchard 入住與休息", "入住 Holiday Inn Singapore Orchard City Centre By IHG。這段住宿為 2 間 2 Double Standard、兩張雙人床房，不含早餐；房間若未好，先寄放行李。"],
@@ -169,7 +260,7 @@ const days = [
       ["10:30", "報到與出境", "國際線建議至少起飛前 2.5 小時完成報到節奏，8 人團更要早。"],
       ["11:15", "Jewel 輕食與最後採買", "把時間留給雨漩渦、伴手禮與簡單午餐；避免正式餐廳排隊壓縮登機緩衝。"],
       ["13:10", "新加坡 → 台北（BR226）", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"],
-      ["17:45", "桃園 T2 抵達與接送返新竹", "BR226 抵達後先領行李、確認兩組成員到齊，再聯絡各車司機。公開頁面只保留遮罩版資訊，完整電話、地址與車牌請看原始預約訊息。"]
+      ["17:45", "桃園 T2 抵達與接送返新竹", "BR226 抵達後先領行李、確認兩組成員到齊，再聯絡各車司機。點開可看完整接送地址、聯絡人、司機與車牌。", transferDetails.inbound]
     ],
     tips: [
       ["時間底線", "10:30 前進入報到流程會比較穩，Jewel 不要逛到忘記登機。"],
@@ -217,15 +308,16 @@ const panels = {
       },
       {
         icon: "car",
-        title: "台灣機場接送（公開版）",
-        image: "./assets/transfer-contact-public.jpg",
+        title: "台灣機場接送（家用版）",
+        image: "./assets/transfer-contact-full.jpg",
         imageFit: "contain",
         items: [
           "去程 8/15（六）04:30：兩車同步從新竹出發前往桃園機場 T2，航班 BR225；每車 4 人、行李 4 件（3 大 1 小）。",
-          "A 車：民族路住址上車，Toyota RAV4 白，車牌 RCX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
-          "B 車：武陵路 / 荷蘭村住址上車，Toyota RAV4 黃，車牌 TDX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
+          "A 車：民族路住址上車，Toyota RAV4 白，車牌 RCX-9165；車資 $1,500 + $200 夜間加成，合計 $1,700。",
+          "B 車：武陵路 / 荷蘭村住址上車，Toyota RAV4 黃，車牌 TDX-8085；車資 $1,500 + $200 夜間加成，合計 $1,700。",
           "回程 8/19（三）17:45：BR226 抵達桃園機場 T2 後兩車接回新竹；每車車資 $1,500。",
-          "行程前一天 20:00 助理會統一發送行程提醒；完整住址、電話、司機姓名與完整車牌請看原始預約訊息，不放在公開網站。"
+          "完整接送地址、聯絡人、電話、乘客名單、司機資料與車牌，已放在總覽 Day1 04:30 與 Day5 17:45 的行程點明細。",
+          "行程前一天 20:00 助理會統一發送行程提醒。"
         ]
       },
       {
@@ -575,7 +667,7 @@ function commonsImage(fileName, width = 320) {
 const thumbImages = {
   flight: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=360&q=78",
   changi: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg"),
-  transferContact: "./assets/transfer-contact-public.jpg",
+  transferContact: "./assets/transfer-contact-full.jpg",
   flightOutbound: "./assets/flight-br225.jpg",
   flightReturn: "./assets/flight-br226.jpg",
   mbs: commonsImage("Marina_Bay_Sands_and_Merlion.jpg"),
@@ -657,6 +749,38 @@ function googleMapsUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
+function renderStopDetail(detail) {
+  if (!detail) return "";
+  return `
+    <details class="stop-detail">
+      <summary>
+        ${icon("clipboard-list")}
+        <span>${detail.label || "查看完整明細"}</span>
+      </summary>
+      ${
+        detail.image
+          ? `<img class="stop-detail__image" src="${detail.image}" alt="${detail.imageAlt || detail.label || "行程明細"}" loading="lazy" />`
+          : ""
+      }
+      <div class="stop-detail__sections">
+        ${detail.sections
+          .map(
+            (section) => `
+              <section class="stop-detail__group">
+                <h4>${section.title}</h4>
+                <ul>
+                  ${section.rows.map((row) => `<li>${row}</li>`).join("")}
+                </ul>
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+      ${detail.note ? `<p class="stop-detail__note">${detail.note}</p>` : ""}
+    </details>
+  `;
+}
+
 function renderTabs() {
   tabs.innerHTML = days
     .map(
@@ -695,7 +819,7 @@ function renderDay() {
     <div class="timeline">
       ${day.stops
         .map(
-          ([time, title, text]) => `
+          ([time, title, text, detail]) => `
             <article class="stop">
               <div class="stop__media">
                 <time>${time}</time>
@@ -723,6 +847,7 @@ function renderDay() {
                 </div>
                 <p>${text}</p>
               </div>
+              ${renderStopDetail(detail)}
             </article>
           `
         )
