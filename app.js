@@ -188,6 +188,20 @@ const panels = {
     title: "資訊",
     sections: [
       {
+        icon: "clipboard-check",
+        title: "行前準備與注意事項",
+        items: [
+          "簽證與護照：台灣普通護照短期觀光 / 社交訪問 30 天內免簽；全員護照效期至少 6 個月，回程機票、飯店地址與保險資料先截圖。",
+          "SG Arrival Card：8/15 抵達新加坡，最早 2026/8/13 可送出，最晚抵達前完成；官方申請免費，只用 ICA e-Service 或 MyICA Mobile。",
+          "網路：影片提到 eSIM、SIM 卡、Wi-Fi 三種方案；建議至少兩位成人各有可上網方案，QR code、兌換憑證與客服資訊先離線保存。",
+          "交通卡與付款：MRT / 巴士可用 Visa、Mastercard 感應支付，也可買 EZ-Link / NETS FlashPay；Grab、CDG Zig、Gojek 出發前先登入綁卡。",
+          "換匯與現金：大型店家刷卡方便，小吃攤、部分熟食中心或臨時現金需求仍準備少量 SGD；用「匯率」頁快速換算台幣與新幣。",
+          "電力與隨身裝備：新加坡為 Type G 插座、230V；帶轉接頭、行動電源、薄外套、防曬、摺疊傘與水壺，孩子背包維持輕量。",
+          "退稅：購物單據與商品集中管理；托運商品先在出境前辦 eTRS，手提商品出境後依指示處理，回程 10:30 前進入報到節奏比較穩。",
+          "公共規範：MRT 禁飲食，公共場所請注意垃圾、吸菸與違禁品規定；藥品、電子用品或特殊物品出發前再查官方入境限制。"
+        ]
+      },
+      {
         icon: "landmark",
         title: "新加坡相關生活常識",
         items: [
@@ -242,10 +256,13 @@ const panels = {
       ["Visit Singapore", "https://www.visitsingapore.com/"],
       ["Changi Airport", "https://www.changiairport.com/"],
       ["ICA SG Arrival Card", "https://eservices.ica.gov.sg/sgarrivalcard/"],
+      ["Singapore Trade Office in Taipei Visa", "https://taipei.mfa.gov.sg/consular-services/visa-information/"],
+      ["Singapore Customs Tourist Refund Scheme", "https://www.customs.gov.sg/at-customs/departing-singapore/tourist-refund-scheme/"],
       ["LTA MRT System Map", "https://www.lta.gov.sg/content/ltaweb/en/public-transport/mrt-and-lrt/mrt-system-map.html"],
       ["Grab Singapore", "https://transport.grab.com/"],
       ["CDG Zig", "https://www.cdgtaxi.com.sg/cdg-zig/"],
-      ["Gojek Singapore", "https://www.gojek.com/sg/"]
+      ["Gojek Singapore", "https://www.gojek.com/sg/"],
+      ["2A夫妻新加坡行前準備影片", "https://www.youtube.com/watch?v=jrrSjLdhDiU"]
     ]
   },
   marina: {
