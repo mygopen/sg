@@ -2,4 +2,5 @@ User-agent: Googlebot-Image
 Disallow: /
 
 User-agent: *
+Content-Signal: search=no,ai-input=no,ai-train=no,use=no
 Disallow: /assets/
