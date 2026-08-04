@@ -218,12 +218,36 @@ const panels = {
       {
         icon: "car",
         title: "台灣機場接送（公開版）",
+        image: "./assets/transfer-contact-public.jpg",
+        imageFit: "contain",
         items: [
           "去程 8/15（六）04:30：兩車同步從新竹出發前往桃園機場 T2，航班 BR225；每車 4 人、行李 4 件（3 大 1 小）。",
           "A 車：民族路住址上車，Toyota RAV4 白，車牌 RCX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
           "B 車：武陵路 / 荷蘭村住址上車，Toyota RAV4 黃，車牌 TDX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
           "回程 8/19（三）17:45：BR226 抵達桃園機場 T2 後兩車接回新竹；每車車資 $1,500。",
           "行程前一天 20:00 助理會統一發送行程提醒；完整住址、電話、司機姓名與完整車牌請看原始預約訊息，不放在公開網站。"
+        ]
+      },
+      {
+        icon: "plane-takeoff",
+        title: "BR225 去程訂位截圖",
+        image: "./assets/flight-br225.jpg",
+        imageFit: "contain",
+        items: [
+          "2026/08/15：TPE 台北桃園 07:30 → SIN 新加坡樟宜 11:55。",
+          "航站資訊：桃園國際機場航站 2、樟宜機場航站 3；機型 B777。",
+          "訂位艙等為經濟艙 N，機位狀態已確認。"
+        ]
+      },
+      {
+        icon: "plane-landing",
+        title: "BR226 回程訂位截圖",
+        image: "./assets/flight-br226.jpg",
+        imageFit: "contain",
+        items: [
+          "2026/08/19：SIN 新加坡樟宜 13:10 → TPE 台北桃園 17:45。",
+          "航站資訊：樟宜機場航站 3、桃園國際機場航站 2；機型 B777。",
+          "訂位艙等為經濟艙 N，機位狀態已確認；抵達後銜接 17:45 桃園 T2 接送。"
         ]
       },
       {
@@ -551,6 +575,9 @@ function commonsImage(fileName, width = 320) {
 const thumbImages = {
   flight: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=360&q=78",
   changi: commonsImage("Jewel_Changi_Airport_Rain_Vortex_3.jpg"),
+  transferContact: "./assets/transfer-contact-public.jpg",
+  flightOutbound: "./assets/flight-br225.jpg",
+  flightReturn: "./assets/flight-br226.jpg",
   mbs: commonsImage("Marina_Bay_Sands_and_Merlion.jpg"),
   merlion: commonsImage("Marina_Bay_Sands_and_Merlion.jpg"),
   gardens: commonsImage("Supertree_Grove,_Gardens_by_the_Bay,_Singapore.jpg"),
@@ -571,9 +598,9 @@ const thumbImages = {
 };
 
 const stopThumbImages = {
-  "新竹兩組接送出發": thumbImages.flight,
+  "新竹兩組接送出發": thumbImages.transferContact,
   "台北 → 新加坡": thumbImages.flight,
-  "台北 → 新加坡（BR225）": thumbImages.flight,
+  "台北 → 新加坡（BR225）": thumbImages.flightOutbound,
   "抵達樟宜、入境與午餐": thumbImages.changi,
   "Holiday Inn Orchard 入住與休息": thumbImages.holidayInn,
   "Orchard 補給與飯店泳池": thumbImages.orchard,
@@ -611,8 +638,8 @@ const stopThumbImages = {
   "報到與出境": thumbImages.changi,
   "Jewel 輕食與最後採買": thumbImages.jewel,
   "新加坡 → 台北": thumbImages.flight,
-  "新加坡 → 台北（BR226）": thumbImages.flight,
-  "桃園 T2 抵達與接送返新竹": thumbImages.flight
+  "新加坡 → 台北（BR226）": thumbImages.flightReturn,
+  "桃園 T2 抵達與接送返新竹": thumbImages.transferContact
 };
 
 const tabs = document.querySelector(".day-tabs");
@@ -768,7 +795,7 @@ function renderInfoPanel() {
                     <section class="info-section">
                       ${
                         section.image
-                          ? `<img class="info-section__image" src="${section.image}" alt="${section.title}" loading="lazy" />`
+                          ? `<img class="info-section__image ${section.imageFit === "contain" ? "is-contain" : ""}" src="${section.image}" alt="${section.title}" loading="lazy" />`
                           : ""
                       }
                       <div class="info-section__heading">

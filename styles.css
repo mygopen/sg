@@ -718,6 +718,13 @@ a:focus-visible {
   background: #e2e8f0;
 }
 
+.info-section__image.is-contain {
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background: #fff;
+}
+
 .info-section__heading {
   display: flex;
   align-items: center;
