@@ -335,6 +335,54 @@ const days = [
   }
 ];
 
+const travelSegments = {
+  1: [
+    { icon: "car", mode: "專車接送", duration: "約 70-90 分＋報到", note: "兩台 RAV4 到桃園 T2，抵達後直接報到、托運、過安檢。" },
+    { icon: "plane", mode: "BR225 直飛", duration: "約 4 小時 25 分", note: "機上補眠、補水，抵達前確認入境資料與護照。" },
+    { icon: "car", mode: "入境＋叫車", duration: "約 90-120 分", note: "入境、領行李、午餐後分 2 台車前往 Orchard 飯店。" },
+    { icon: "bed-double", mode: "飯店內休整", duration: "約 2 小時", note: "辦理入住、寄放行李或回房休息，補水充電再出門。" },
+    { icon: "car", mode: "Orchard → 濱海灣", duration: "約 20-30 分", note: "8 人建議分 2 台車，雨天或晚餐尖峰提早叫車。" },
+    { icon: "footprints", mode: "灣區短走", duration: "約 8-12 分", note: "下車後步行到魚尾獅與濱海灣拍照點。" },
+    { icon: "car", mode: "短程叫車", duration: "約 10-15 分", note: "從魚尾獅到 Riverside Point，保留晚餐訂位緩衝。" },
+    { icon: "car", mode: "晚間回程", duration: "約 15-25 分", note: "看體力決定去 MBS 水舞或直接回 Holiday Inn Orchard。" }
+  ],
+  2: [
+    { icon: "car", mode: "Orchard → Gardens", duration: "約 15-25 分", note: "早上直接進濱海灣花園，減少正午戶外曝曬。" },
+    { icon: "footprints", mode: "展館 → Supertree", duration: "約 10-15 分", note: "冷房出來慢慢走，若太熱可先進商場或找飲料。" },
+    { icon: "car", mode: "Gardens → Science Centre", duration: "約 30-40 分", note: "距離較遠，8 人親子團建議分 2 台車。" },
+    { icon: "footprints", mode: "館內移動", duration: "約 5-10 分", note: "分齡看展，先約好集合點與上洗手間時間。" },
+    { icon: "car", mode: "Science Centre → Orchard", duration: "約 25-35 分", note: "車上補水休息，晚餐前回飯店整理。" },
+    { icon: "car", mode: "Orchard → 松發", duration: "約 10-15 分", note: "Clarke Quay / New Bridge Road 一帶下車點先確認。" },
+    { icon: "car", mode: "晚間彈性移動", duration: "約 15-20 分", note: "體力好去 Supertree 看燈光秀，累了直接回飯店。" }
+  ],
+  3: [
+    { icon: "car", mode: "Orchard → Mandai", duration: "約 25-35 分", note: "退房寄放行李後出發，抵達開園時段較舒服。" },
+    { icon: "footprints", mode: "園區步行", duration: "約 10-15 分", note: "走樹蔭路線，先攻孩子最想看的區域。" },
+    { icon: "footprints", mode: "園區移動", duration: "約 10-15 分", note: "表演前 15 分鐘到場，避開正午硬走。" },
+    { icon: "car", mode: "Zoo → Orchard", duration: "約 25-35 分", note: "回 Holiday Inn 取行李，車上補水補糖。" },
+    { icon: "car", mode: "Orchard → Sentosa", duration: "約 25-40 分", note: "8 人加行李建議預約 van 或分 2 台 Grab XL。" },
+    { icon: "bed-double", mode: "抵達 Oasia", duration: "約 5-10 分", note: "辦理入住，確認隔天到 RWS 的動線。" },
+    { icon: "waves", mode: "飯店內休息", duration: "約 60-90 分", note: "轉場日收尾以泳池、洗澡、輕鬆散步為主。" },
+    { icon: "tram-front", mode: "島內移動", duration: "約 10-15 分", note: "Mess Hall、Beach Station 或 RWS 都可當晚餐點。" }
+  ],
+  4: [
+    { icon: "tram-front", mode: "Oasia → RWS", duration: "約 5-12 分", note: "搭 Sentosa Express / 島內交通，或短程叫車。" },
+    { icon: "footprints", mode: "RWS 步行", duration: "約 5 分", note: "先拍地球標誌，再確認入園票與排隊時間。" },
+    { icon: "footprints", mode: "園內移動", duration: "約 5-10 分", note: "用 App 看等待時間，先玩熱門設施。" },
+    { icon: "footprints", mode: "園內移動", duration: "約 10 分", note: "午餐後分刺激組與輕鬆組，約好集合點。" },
+    { icon: "footprints", mode: "RWS 內移動", duration: "約 5-10 分", note: "海洋館是備案，不要壓縮 USS 主行程。" },
+    { icon: "tram-front", mode: "島內晚間移動", duration: "約 10-15 分", note: "從 RWS、Beach Station 或 Oasia 附近晚餐後回房。" }
+  ],
+  5: [
+    { icon: "car", mode: "Sentosa → Changi", duration: "約 35-55 分", note: "雨天或尖峰再加緩衝，8 人加行李建議預約車。" },
+    { icon: "footprints", mode: "Jewel 步行", duration: "約 5-10 分", note: "先看雨漩渦，再決定是否寄放行李或直接報到。" },
+    { icon: "footprints", mode: "Jewel → 航廈", duration: "約 10-20 分", note: "10:30 前進入報到與出境節奏。" },
+    { icon: "footprints", mode: "出境後移動", duration: "約 10-20 分", note: "確認 gate、退稅與最後採買，不要走太遠。" },
+    { icon: "plane", mode: "BR226 直飛", duration: "約 4 小時 35 分", note: "13:10 起飛，17:45 抵達桃園 T2。" },
+    { icon: "car", mode: "桃園 → 新竹", duration: "約 70-90 分", note: "領行李後確認兩組成員，再聯絡各車司機。" }
+  ]
+};
+
 const panels = {
   tickets: {
     title: "資訊",
@@ -830,6 +878,7 @@ const dayPanel = document.querySelector(".day-panel");
 const infoPanel = document.querySelector(".info-panel");
 const toolButtons = [...document.querySelectorAll(".tool")];
 let activeDay = 1;
+let activeMapDay = 1;
 let activeView = "summary";
 
 function icon(name) {
@@ -860,6 +909,29 @@ function googleDirectionsUrl(day) {
   });
   if (waypoints) params.set("waypoints", waypoints);
   return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function parseClock(time) {
+  const [hours, minutes] = String(time).split(":").map(Number);
+  if (!Number.isFinite(hours) || !Number.isFinite(minutes)) return null;
+  return hours * 60 + minutes;
+}
+
+function formatMinutes(minutes) {
+  if (!Number.isFinite(minutes) || minutes <= 0) return "彈性";
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  if (hours && rest) return `${hours} 小時 ${rest} 分`;
+  if (hours) return `${hours} 小時`;
+  return `${rest} 分`;
+}
+
+function stopWindow(day, index) {
+  const current = parseClock(day.stops[index]?.[0]);
+  const next = parseClock(day.stops[index + 1]?.[0]);
+  if (current === null || next === null) return "彈性";
+  const diff = next >= current ? next - current : next + 24 * 60 - current;
+  return formatMinutes(diff);
 }
 
 function getStopKind(title, text = "", detail) {
@@ -903,6 +975,34 @@ function renderStopBadges(title, text, detail) {
   `;
 }
 
+function stopDurationLabel(day, index, title, text, detail) {
+  if (index >= day.stops.length - 1) return "當日收尾";
+  const kind = getStopKind(title, text, detail);
+  const label = kind.label === "交通" || kind.label === "航班" ? "段落" : "停留";
+  return `${label} ${stopWindow(day, index)}`;
+}
+
+function travelSegmentFor(day, index) {
+  return travelSegments[day.id]?.[index] || null;
+}
+
+function renderTravelSegment(day, index) {
+  if (index >= day.stops.length - 1) return "";
+  const segment = travelSegmentFor(day, index);
+  if (!segment) return "";
+  return `
+    <div class="travel-step" aria-label="下一段交通">
+      <div class="travel-step__rail">
+        <span>${icon(segment.icon || "route")}</span>
+      </div>
+      <div class="travel-step__body">
+        <strong>${segment.mode} · ${segment.duration}</strong>
+        <p>${segment.note}</p>
+      </div>
+    </div>
+  `;
+}
+
 function routePreview(day) {
   const stops = day.stops
     .filter(([, title]) => !/(新竹兩組接送出發|台北 → 新加坡|新加坡 → 台北|桃園 T2)/.test(title))
@@ -913,10 +1013,10 @@ function routePreview(day) {
 
 function renderPlannerOverview(day) {
   return `
-    <section class="planner-overview" aria-label="Trip Planner 行程摘要">
+    <section class="planner-overview" aria-label="今日行程摘要">
       <div class="planner-overview__head">
         <div>
-          <p class="planner-eyebrow">Trip.Planner style</p>
+          <p class="planner-eyebrow">今日節奏</p>
           <h2>${day.date} · ${day.weekday}</h2>
         </div>
         <a class="mini-map-link" href="${googleDirectionsUrl(day)}" target="_blank" rel="noreferrer">
@@ -1015,43 +1115,55 @@ function renderDay() {
     <h2 class="section-title">一整天行程</h2>
     <div class="timeline">
       ${day.stops
-        .map(
-          ([time, title, text, detail], index) => `
-            <article class="stop">
-              <div class="stop__media">
-                <span class="stop-index">${String(index + 1).padStart(2, "0")}</span>
-                <time>${time}</time>
-                <img
-                  class="stop-thumb"
-                  src="${stopThumbImages[title] || day.image}"
-                  alt="${title}"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='${day.image}'"
-                />
-              </div>
-              <div>
-                <div class="stop__heading">
-                  <div>
-                    <h3>${title}</h3>
-                    ${renderStopBadges(title, text, detail)}
-                  </div>
-                  <a
-                    class="map-icon"
-                    href="${googleMapsUrl(stopQuery(title))}"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="在 Google Maps 開啟 ${title}"
-                    title="Google Maps"
-                  >
-                    ${icon("map-pin")}
-                  </a>
+        .map(([time, title, text, detail], index) => {
+          const kind = getStopKind(title, text, detail);
+          return `
+            <div class="timeline-item">
+              <article class="stop timeline-stop">
+                <div class="timeline-marker" aria-hidden="true">
+                  <span class="stop-index">${String(index + 1).padStart(2, "0")}</span>
+                  ${index < day.stops.length - 1 ? '<span class="timeline-marker__line"></span>' : ""}
                 </div>
-                <p>${text}</p>
-              </div>
-              ${renderStopDetail(detail)}
-            </article>
-          `
-        )
+                <div class="stop-card">
+                  <div class="stop-meta-row">
+                    <time class="stop-time-pill">${time}</time>
+                    <span class="stop-kind">${icon(kind.icon)}${kind.label}</span>
+                    <span class="stop-stay">${stopDurationLabel(day, index, title, text, detail)}</span>
+                  </div>
+                  <div class="stop-main">
+                    <img
+                      class="stop-thumb"
+                      src="${stopThumbImages[title] || day.image}"
+                      alt="${title}"
+                      loading="lazy"
+                      onerror="this.onerror=null;this.src='${day.image}'"
+                    />
+                    <div class="stop-copy">
+                      <h3>${title}</h3>
+                      <p>${text}</p>
+                    </div>
+                  </div>
+                  <div class="stop-action-row">
+                    ${renderStopBadges(title, text, detail)}
+                    <a
+                      class="text-map-button"
+                      href="${googleMapsUrl(stopQuery(title))}"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="在 Google Maps 開啟 ${title}"
+                      title="Google Maps"
+                    >
+                      ${icon("map-pin")}
+                      地圖
+                    </a>
+                  </div>
+                  ${renderStopDetail(detail)}
+                </div>
+              </article>
+              ${renderTravelSegment(day, index)}
+            </div>
+          `;
+        })
         .join("")}
     </div>
 
@@ -1190,54 +1302,80 @@ function guideCollections() {
 }
 
 function renderMapPanel() {
+  const day = days.find((item) => item.id === activeMapDay) || days[0];
   infoPanel.innerHTML = `
     <article class="info-card planner-page">
       <div class="page-heading">
         <span class="page-icon">${icon("map-pinned")}</span>
         <div>
           <h2>地圖路線</h2>
-          <p>依照 Day1-Day5 產生路線清單，每個行程點都可直接開 Google Maps；整天路線會避開台灣接送與跨國航段。</p>
+          <p>每日移動順序、叫車提醒與步行段集中在這裡；整天路線會避開台灣接送與跨國航段。</p>
         </div>
       </div>
-      <div class="map-days">
+
+      <div class="map-day-switcher" role="tablist" aria-label="選擇地圖路線日">
         ${days
           .map(
-            (day) => `
-              <section class="map-day-card">
-                <div class="map-day-card__head">
-                  <img src="${day.image}" alt="${day.title}" loading="lazy" />
-                  <div>
-                    <span>Day ${day.id} · ${day.date}</span>
-                    <h3>${day.title}</h3>
-                    <p>${day.hotel}</p>
-                  </div>
-                </div>
-                <a class="route-link" href="${googleDirectionsUrl(day)}" target="_blank" rel="noreferrer">
-                  ${icon("navigation")}
-                  開啟整天路線
-                </a>
-                <div class="map-stop-list">
-                  ${day.stops
-                    .map(
-                      ([time, title, text, detail], index) => {
-                        const kind = getStopKind(title, text, detail);
-                        return `
-                          <a class="map-stop" href="${googleMapsUrl(stopQuery(title))}" target="_blank" rel="noreferrer">
-                            <span class="map-stop__number">${index + 1}</span>
-                            <span class="map-stop__body">
-                              <small>${time} · ${kind.label}</small>
-                              <strong>${title}</strong>
-                            </span>
-                            ${icon("map-pin")}
-                          </a>
-                        `;
-                      }
-                    )
-                    .join("")}
-                </div>
-              </section>
+            (item) => `
+              <button
+                class="map-day-button ${item.id === day.id ? "is-active" : ""}"
+                type="button"
+                data-map-day="${item.id}"
+                role="tab"
+                aria-selected="${item.id === day.id}"
+              >
+                Day ${item.id}
+                <small>${item.date}</small>
+              </button>
             `
           )
+          .join("")}
+      </div>
+
+      <section class="map-route-hero">
+        <img src="${day.image}" alt="${day.title}" loading="lazy" />
+        <div class="map-route-hero__body">
+          <span>Day ${day.id} · ${day.date} · ${day.weekday}</span>
+          <h3>${day.title}</h3>
+          <p>${day.hotel}</p>
+          <a class="route-link" href="${googleDirectionsUrl(day)}" target="_blank" rel="noreferrer">
+            ${icon("navigation")}
+            開啟整天路線
+          </a>
+        </div>
+      </section>
+
+      <div class="route-timeline">
+        ${day.stops
+          .map(([time, title, text, detail], index) => {
+            const kind = getStopKind(title, text, detail);
+            const segment = travelSegmentFor(day, index);
+            return `
+              <div class="route-node">
+                <a class="map-route-stop" href="${googleMapsUrl(stopQuery(title))}" target="_blank" rel="noreferrer">
+                  <span class="map-route-stop__index">${index + 1}</span>
+                  <span class="map-route-stop__content">
+                    <small>${time} · ${kind.label} · ${stopDurationLabel(day, index, title, text, detail)}</small>
+                    <strong>${title}</strong>
+                  </span>
+                  ${icon("map-pin")}
+                </a>
+                ${
+                  segment && index < day.stops.length - 1
+                    ? `
+                      <div class="map-route-leg">
+                        <span>${icon(segment.icon || "route")}</span>
+                        <div>
+                          <strong>${segment.mode} · ${segment.duration}</strong>
+                          <p>${segment.note}</p>
+                        </div>
+                      </div>
+                    `
+                    : ""
+                }
+              </div>
+            `;
+          })
           .join("")}
       </div>
     </article>
@@ -1554,6 +1692,9 @@ function updateViewMode() {
 }
 
 function activateView(view) {
+  if (view === "map" && activeView === "summary") {
+    activeMapDay = activeDay;
+  }
   activeView = view;
   toolButtons.forEach((item) => item.classList.toggle("is-active", item.dataset.view === view));
   renderInfoPanel();
@@ -1572,6 +1713,16 @@ tabs.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  const mapDayButton = event.target.closest("[data-map-day]");
+  if (mapDayButton) {
+    activeMapDay = Number(mapDayButton.dataset.mapDay);
+    renderMapPanel();
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+    return;
+  }
+
   const jumpButton = event.target.closest("[data-jump-view]");
   if (!jumpButton) return;
   activateView(jumpButton.dataset.jumpView);

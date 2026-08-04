@@ -1,10 +1,10 @@
-const CACHE_NAME = "sg-trip-pwa-20260804-planner-v11";
-const RUNTIME_CACHE = "sg-trip-runtime-20260804-planner-v11";
+const CACHE_NAME = "sg-trip-pwa-20260804-funliday-v12";
+const RUNTIME_CACHE = "sg-trip-runtime-20260804-funliday-v12";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260804-planner-v11",
-  "./app.js?v=20260804-planner-v11",
+  "./styles.css?v=20260804-funliday-v12",
+  "./app.js?v=20260804-funliday-v12",
   "./manifest.webmanifest",
   "./assets/app-icon.svg",
   "./assets/app-icon-180.png",
