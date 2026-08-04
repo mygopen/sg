@@ -11,10 +11,11 @@ const days = [
     imageCredit: "Photo: Wikimedia Commons",
     weather: { icon: "cloud-rain", label: "午後雷雨", temp: "25-32°C" },
     summary:
-      "前兩晚住 Holiday Inn Singapore Orchard City Centre By IHG。抵達後先進 Orchard 休息，傍晚再用 Grab / MRT 進濱海灣拍魚尾獅、吃珍寶海鮮，夜景當作第一天開場。",
+      "04:30 兩組接送從新竹出發到桃園 T2，搭 BR225 抵達新加坡。前兩晚住 Holiday Inn Singapore Orchard City Centre By IHG，傍晚再進濱海灣拍魚尾獅、吃珍寶海鮮。",
     map: "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Singapore+Orchard+City+Centre",
     stops: [
-      ["07:30", "台北 → 新加坡", "直飛，抵達後以飯店休息與夜景為主。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
+      ["04:30", "新竹兩組接送出發", "兩台 Toyota RAV4 同步從新竹出發前往桃園機場 T2，航班 BR225。每車 4 人、4 件行李（3 大 1 小）；夜間出發，前一晚先把護照與行李集中。"],
+      ["07:30", "台北 → 新加坡（BR225）", "直飛，抵達後以飯店休息與夜景為主。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
       ["12:00", "抵達樟宜、入境與午餐", "抓 90-120 分鐘完成入境、行李與午餐。8 人加行李建議預約接送或分 2 台 Grab XL 直達 Orchard。"],
       ["14:30", "Holiday Inn Orchard 入住與休息", "入住 Holiday Inn Singapore Orchard City Centre By IHG。這段住宿為 2 間 2 Double Standard、兩張雙人床房，不含早餐；房間若未好，先寄放行李。"],
       ["16:45", "Orchard 補給與飯店泳池", "第一晚不硬衝，讓孩子在飯店泳池或房間恢復體力；晚間小包只帶水、雨具、行動電源。"],
@@ -151,7 +152,7 @@ const days = [
     id: 5,
     date: "8/19",
     weekday: "星期三",
-    title: "Oasia 退房，星耀樟宜收尾",
+    title: "Oasia 退房，星耀樟宜與返台接送",
     theme: "機場景點收尾",
     hotel: "返程",
     pace: "低強度",
@@ -159,7 +160,7 @@ const days = [
     imageCredit: "Photo: Bennv3771 / Wikimedia Commons",
     weather: { icon: "cloud-rain", label: "濕熱有雨", temp: "25-31°C" },
     summary:
-      "回程航班 13:10，從 Oasia Resort Sentosa by Far East Hospitality 退房後直奔樟宜。今天只排機場內的 Jewel Changi，核心是準時、輕鬆、不要趕場。",
+      "回程航班 BR226 13:10 從新加坡起飛，17:45 抵達桃園 T2 後有兩組接送回新竹。今天只排 Jewel Changi，核心是準時、輕鬆、不要趕場。",
     map: "https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport",
     stops: [
       ["07:30", "Oasia 早餐與退房", "確認護照、登機資料、退稅單、孩子隨身外套。退房前把退稅商品與單據集中給一位成人。"],
@@ -167,7 +168,8 @@ const days = [
       ["09:10", "Jewel Changi Airport", "先看 HSBC Rain Vortex，再逛 Canopy Park 或買伴手禮。行李多時先找寄放或航空櫃台。"],
       ["10:30", "報到與出境", "國際線建議至少起飛前 2.5 小時完成報到節奏，8 人團更要早。"],
       ["11:15", "Jewel 輕食與最後採買", "把時間留給雨漩渦、伴手禮與簡單午餐；避免正式餐廳排隊壓縮登機緩衝。"],
-      ["13:10", "新加坡 → 台北", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"]
+      ["13:10", "新加坡 → 台北（BR226）", "早上直攻星耀樟宜，保留報到緩衝。直飛返程，照片備份可在候機時完成。"],
+      ["17:45", "桃園 T2 抵達與接送返新竹", "BR226 抵達後先領行李、確認兩組成員到齊，再聯絡各車司機。公開頁面只保留遮罩版資訊，完整電話、地址與車牌請看原始預約訊息。"]
     ],
     tips: [
       ["時間底線", "10:30 前進入報到流程會比較穩，Jewel 不要逛到忘記登機。"],
@@ -211,6 +213,17 @@ const panels = {
           "Holiday Inn 兒童同住：訂房條件註記 12y 以下不加床可免費同住；入住時仍以訂單條款與飯店現場確認為準。",
           "8/17-8/19 兩晚：Oasia Resort Sentosa by Far East Hospitality（聖淘沙豪亞度假酒店），住島上方便 Day4 環球影城、海洋館與聖淘沙玩水。",
           "換飯店日提醒：Day3 先從 Holiday Inn 退房寄放行李去動物園，下午回 Orchard 取行李後再進 Oasia；8 人加行李建議預約 van 或分 2 台 Grab XL。"
+        ]
+      },
+      {
+        icon: "car",
+        title: "台灣機場接送（公開版）",
+        items: [
+          "去程 8/15（六）04:30：兩車同步從新竹出發前往桃園機場 T2，航班 BR225；每車 4 人、行李 4 件（3 大 1 小）。",
+          "A 車：民族路住址上車，Toyota RAV4 白，車牌 RCX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
+          "B 車：武陵路 / 荷蘭村住址上車，Toyota RAV4 黃，車牌 TDX-****；車資 $1,500 + $200 夜間加成，合計 $1,700。",
+          "回程 8/19（三）17:45：BR226 抵達桃園機場 T2 後兩車接回新竹；每車車資 $1,500。",
+          "行程前一天 20:00 助理會統一發送行程提醒；完整住址、電話、司機姓名與完整車牌請看原始預約訊息，不放在公開網站。"
         ]
       },
       {
@@ -487,7 +500,9 @@ const panels = {
 };
 
 const stopMapQueries = {
+  "新竹兩組接送出發": "Taiwan Taoyuan International Airport Terminal 2",
   "台北 → 新加坡": "Taiwan Taoyuan International Airport Terminal 2",
+  "台北 → 新加坡（BR225）": "Taiwan Taoyuan International Airport Terminal 2",
   "抵達樟宜、入境與午餐": "Singapore Changi Airport",
   "Holiday Inn Orchard 入住與休息": "Holiday Inn Singapore Orchard City Centre",
   "Orchard 補給與飯店泳池": "Holiday Inn Singapore Orchard City Centre",
@@ -524,7 +539,9 @@ const stopMapQueries = {
   "Jewel Changi Airport": "Jewel Changi Airport",
   "報到與出境": "Singapore Changi Airport Terminal 1",
   "Jewel 輕食與最後採買": "Jewel Changi Airport Food",
-  "新加坡 → 台北": "Singapore Changi Airport"
+  "新加坡 → 台北": "Singapore Changi Airport",
+  "新加坡 → 台北（BR226）": "Singapore Changi Airport",
+  "桃園 T2 抵達與接送返新竹": "Taiwan Taoyuan International Airport Terminal 2"
 };
 
 function commonsImage(fileName, width = 320) {
@@ -554,7 +571,9 @@ const thumbImages = {
 };
 
 const stopThumbImages = {
+  "新竹兩組接送出發": thumbImages.flight,
   "台北 → 新加坡": thumbImages.flight,
+  "台北 → 新加坡（BR225）": thumbImages.flight,
   "抵達樟宜、入境與午餐": thumbImages.changi,
   "Holiday Inn Orchard 入住與休息": thumbImages.holidayInn,
   "Orchard 補給與飯店泳池": thumbImages.orchard,
@@ -591,7 +610,9 @@ const stopThumbImages = {
   "Jewel Changi Airport": thumbImages.jewel,
   "報到與出境": thumbImages.changi,
   "Jewel 輕食與最後採買": thumbImages.jewel,
-  "新加坡 → 台北": thumbImages.flight
+  "新加坡 → 台北": thumbImages.flight,
+  "新加坡 → 台北（BR226）": thumbImages.flight,
+  "桃園 T2 抵達與接送返新竹": thumbImages.flight
 };
 
 const tabs = document.querySelector(".day-tabs");
