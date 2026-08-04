@@ -840,6 +840,110 @@ function googleMapsUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
+function stopQuery(title) {
+  return stopMapQueries[title] || `${title} Singapore`;
+}
+
+function googleDirectionsUrl(day) {
+  const routeStops = day.stops
+    .filter(([, title]) => !/(新竹|桃園 T2|台北 → 新加坡|新加坡 → 台北)/.test(title))
+    .map(([, title]) => stopQuery(title));
+  if (routeStops.length < 2) return day.map || googleMapsUrl(routeStops[0] || "Singapore");
+  const origin = routeStops[0];
+  const destination = routeStops[routeStops.length - 1];
+  const waypoints = routeStops.slice(1, -1).slice(0, 7).join("|");
+  const params = new URLSearchParams({
+    api: "1",
+    origin,
+    destination,
+    travelmode: "driving"
+  });
+  if (waypoints) params.set("waypoints", waypoints);
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function getStopKind(title, text = "", detail) {
+  const content = `${title} ${text}`;
+  if (/接送/.test(title)) return { label: "交通", icon: "car" };
+  if (/BR225|BR226|台北 → 新加坡|新加坡 → 台北/.test(content)) return { label: "航班", icon: "plane" };
+  if (/前往|移動|出發|抵達|報到|退房/.test(content)) return { label: "交通", icon: "car" };
+  if (/入住|Holiday Inn|Oasia|飯店/.test(content)) return { label: "住宿", icon: "bed-double" };
+  if (/早餐|午餐|晚餐|肉骨茶|珍寶|輕食/.test(content)) return { label: "餐食", icon: "utensils" };
+  if (/備案|雨|休息|泳池|降溫/.test(content)) return { label: "調整", icon: "sliders-horizontal" };
+  if (detail) return { label: "明細", icon: "clipboard-list" };
+  return { label: "景點", icon: "map-pin" };
+}
+
+function stopBadges(title, text = "", detail) {
+  const badges = [getStopKind(title, text, detail)];
+  if (detail) badges.push({ label: "可展開", icon: "chevron-down" });
+  if (/8 人|孩子|親子|小孩|泳池|動物園|環球|科學/.test(`${title} ${text}`)) {
+    badges.push({ label: "親子", icon: "users" });
+  }
+  if (/雨|室內|冷房|商場|Jewel|Science|Oceanarium/.test(`${title} ${text}`)) {
+    badges.push({ label: "雨備", icon: "umbrella" });
+  }
+  return badges.slice(0, 3);
+}
+
+function renderStopBadges(title, text, detail) {
+  return `
+    <div class="stop-labels">
+      ${stopBadges(title, text, detail)
+        .map(
+          (badge) => `
+            <span class="stop-badge">
+              ${icon(badge.icon)}
+              ${badge.label}
+            </span>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function routePreview(day) {
+  const stops = day.stops
+    .filter(([, title]) => !/(新竹兩組接送出發|台北 → 新加坡|新加坡 → 台北|桃園 T2)/.test(title))
+    .map(([, title]) => title);
+  if (stops.length <= 4) return stops;
+  return [stops[0], stops[1], stops[Math.floor(stops.length / 2)], stops[stops.length - 1]];
+}
+
+function renderPlannerOverview(day) {
+  return `
+    <section class="planner-overview" aria-label="Trip Planner 行程摘要">
+      <div class="planner-overview__head">
+        <div>
+          <p class="planner-eyebrow">Trip.Planner style</p>
+          <h2>${day.date} · ${day.weekday}</h2>
+        </div>
+        <a class="mini-map-link" href="${googleDirectionsUrl(day)}" target="_blank" rel="noreferrer">
+          ${icon("navigation")}
+          路線
+        </a>
+      </div>
+      <p>${day.summary}</p>
+      <div class="overview-metrics" aria-label="當日摘要">
+        <span>${icon("hotel")} ${day.hotel}</span>
+        <span>${icon("activity")} ${day.pace}</span>
+        <span>${icon(day.weather.icon)} ${day.weather.label} ${day.weather.temp}</span>
+      </div>
+      <div class="route-chain" aria-label="路線摘要">
+        ${routePreview(day)
+          .map((title) => `<span>${title}</span>`)
+          .join("")}
+      </div>
+      <div class="planner-actions">
+        <button class="planner-chip" type="button" data-jump-view="map">${icon("map-pinned")}看地圖</button>
+        <button class="planner-chip" type="button" data-jump-view="guide">${icon("umbrella")}雨天備案</button>
+        <button class="planner-chip" type="button" data-jump-view="tools">${icon("coins")}工具</button>
+      </div>
+    </section>
+  `;
+}
+
 function renderStopDetail(detail) {
   if (!detail) return "";
   return `
@@ -906,13 +1010,16 @@ function renderDay() {
       </div>
     </article>
 
+    ${renderPlannerOverview(day)}
+
     <h2 class="section-title">一整天行程</h2>
     <div class="timeline">
       ${day.stops
         .map(
-          ([time, title, text, detail]) => `
+          ([time, title, text, detail], index) => `
             <article class="stop">
               <div class="stop__media">
+                <span class="stop-index">${String(index + 1).padStart(2, "0")}</span>
                 <time>${time}</time>
                 <img
                   class="stop-thumb"
@@ -924,10 +1031,13 @@ function renderDay() {
               </div>
               <div>
                 <div class="stop__heading">
-                  <h3>${title}</h3>
+                  <div>
+                    <h3>${title}</h3>
+                    ${renderStopBadges(title, text, detail)}
+                  </div>
                   <a
                     class="map-icon"
-                    href="${googleMapsUrl(stopMapQueries[title] || `${title} Singapore`)}"
+                    href="${googleMapsUrl(stopQuery(title))}"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="在 Google Maps 開啟 ${title}"
@@ -987,9 +1097,220 @@ function scrollToDayBanner() {
   });
 }
 
+function renderInfoSection(section) {
+  return `
+    <section class="info-section">
+      ${
+        section.image
+          ? `<img class="info-section__image ${section.imageFit === "contain" ? "is-contain" : ""}" src="${section.image}" alt="${section.title}" loading="lazy" />`
+          : ""
+      }
+      <div class="info-section__heading">
+        ${icon(section.icon)}
+        <h3>${section.title}</h3>
+      </div>
+      <ul class="check-list">
+        ${section.items
+          .map(
+            (item) => `
+              <li>
+                ${icon("check-circle-2")}
+                <span>${item}</span>
+              </li>
+            `
+          )
+          .join("")}
+      </ul>
+    </section>
+  `;
+}
+
+function renderInfoSections(sections) {
+  return `
+    <div class="info-sections">
+      ${sections.map(renderInfoSection).join("")}
+    </div>
+  `;
+}
+
+function renderPanelLinks(links) {
+  if (!links?.length) return "";
+  return `
+    <div class="panel-links">
+      ${links
+        .map(
+          ([title, href]) => `
+            <a class="link-button" href="${href}" target="_blank" rel="noreferrer">
+              <span>${title}</span>
+              ${icon("external-link")}
+            </a>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function toolSections() {
+  const titles = ["住宿資訊", "台灣機場接送（家用版）", "BR225 去程訂位截圖", "BR226 回程訂位截圖", "緊急聯絡電話", "機場出境教學", "必備 APP"];
+  return panels.tickets.sections.filter((section) => titles.includes(section.title));
+}
+
+function guideCollections() {
+  return [
+    {
+      icon: "badge-info",
+      title: "新加坡必看",
+      intro: "把入境、插座、網路、付款、退稅、交通與公共規範放在最前面，現場要查時不用翻長文。",
+      sections: panels.tickets.sections.slice(0, 5),
+      links: panels.tickets.links
+    },
+    {
+      icon: "landmark",
+      title: panels.marina.title,
+      intro: panels.marina.intro,
+      sections: panels.marina.sections,
+      links: panels.marina.links
+    },
+    {
+      icon: "plane",
+      title: panels.airport.title,
+      intro: panels.airport.intro,
+      sections: panels.airport.sections,
+      links: panels.airport.links
+    },
+    {
+      icon: "palmtree",
+      title: panels.sentosa.title,
+      intro: panels.sentosa.intro,
+      sections: panels.sentosa.sections,
+      links: panels.sentosa.links
+    }
+  ];
+}
+
+function renderMapPanel() {
+  infoPanel.innerHTML = `
+    <article class="info-card planner-page">
+      <div class="page-heading">
+        <span class="page-icon">${icon("map-pinned")}</span>
+        <div>
+          <h2>地圖路線</h2>
+          <p>依照 Day1-Day5 產生路線清單，每個行程點都可直接開 Google Maps；整天路線會避開台灣接送與跨國航段。</p>
+        </div>
+      </div>
+      <div class="map-days">
+        ${days
+          .map(
+            (day) => `
+              <section class="map-day-card">
+                <div class="map-day-card__head">
+                  <img src="${day.image}" alt="${day.title}" loading="lazy" />
+                  <div>
+                    <span>Day ${day.id} · ${day.date}</span>
+                    <h3>${day.title}</h3>
+                    <p>${day.hotel}</p>
+                  </div>
+                </div>
+                <a class="route-link" href="${googleDirectionsUrl(day)}" target="_blank" rel="noreferrer">
+                  ${icon("navigation")}
+                  開啟整天路線
+                </a>
+                <div class="map-stop-list">
+                  ${day.stops
+                    .map(
+                      ([time, title, text, detail], index) => {
+                        const kind = getStopKind(title, text, detail);
+                        return `
+                          <a class="map-stop" href="${googleMapsUrl(stopQuery(title))}" target="_blank" rel="noreferrer">
+                            <span class="map-stop__number">${index + 1}</span>
+                            <span class="map-stop__body">
+                              <small>${time} · ${kind.label}</small>
+                              <strong>${title}</strong>
+                            </span>
+                            ${icon("map-pin")}
+                          </a>
+                        `;
+                      }
+                    )
+                    .join("")}
+                </div>
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
+}
+
+function renderGuidePanel() {
+  infoPanel.innerHTML = `
+    <article class="info-card planner-page">
+      <div class="page-heading">
+        <span class="page-icon">${icon("book-open-check")}</span>
+        <div>
+          <h2>指南</h2>
+          <p>把原本的資訊、濱海灣、機場與聖淘沙整理成現場可快速翻閱的旅行指南。</p>
+        </div>
+      </div>
+      <div class="guide-collections">
+        ${guideCollections()
+          .map(
+            (group) => `
+              <section class="guide-collection">
+                <div class="guide-collection__head">
+                  ${icon(group.icon)}
+                  <div>
+                    <h3>${group.title}</h3>
+                    <p>${group.intro}</p>
+                  </div>
+                </div>
+                ${renderInfoSections(group.sections)}
+                ${renderPanelLinks(group.links)}
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
+}
+
+function renderToolsPanel() {
+  infoPanel.innerHTML = `
+    <div class="tool-stack">
+      ${renderExchangeCard(panels.exchange)}
+      <article class="info-card planner-page">
+        <div class="page-heading">
+          <span class="page-icon">${icon("wrench")}</span>
+          <div>
+            <h2>旅行工具</h2>
+            <p>常用資料集中在這裡：住宿、接送、航班截圖、緊急電話、出境與 App。</p>
+          </div>
+        </div>
+        ${renderInfoSections(toolSections())}
+      </article>
+    </div>
+  `;
+  bindExchangeCalculator();
+}
+
 function renderInfoPanel() {
   if (activeView === "summary") {
     infoPanel.innerHTML = "";
+    return;
+  }
+  if (activeView === "map") {
+    renderMapPanel();
+    return;
+  }
+  if (activeView === "guide") {
+    renderGuidePanel();
+    return;
+  }
+  if (activeView === "tools") {
+    renderToolsPanel();
     return;
   }
   const panel = panels[activeView];
@@ -1081,9 +1402,9 @@ function formatCurrency(value, currency) {
   }).format(value);
 }
 
-function renderExchangePanel(panel) {
+function renderExchangeCard(panel) {
   const quickSgd = [5, 10, 20, 50, 100, 200];
-  infoPanel.innerHTML = `
+  return `
     <article class="info-card exchange-card">
       <div class="exchange-hero">
         <span class="exchange-icon">${icon("coins")}</span>
@@ -1134,6 +1455,10 @@ function renderExchangePanel(panel) {
       <p class="exchange-note">${panel.updated}</p>
     </article>
   `;
+}
+
+function renderExchangePanel(panel) {
+  infoPanel.innerHTML = renderExchangeCard(panel);
   bindExchangeCalculator();
 }
 
@@ -1228,6 +1553,16 @@ function updateViewMode() {
   }
 }
 
+function activateView(view) {
+  activeView = view;
+  toolButtons.forEach((item) => item.classList.toggle("is-active", item.dataset.view === view));
+  renderInfoPanel();
+  updateViewMode();
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
 tabs.addEventListener("click", (event) => {
   const button = event.target.closest(".day-tab");
   if (!button) return;
@@ -1236,15 +1571,15 @@ tabs.addEventListener("click", (event) => {
   scrollToDayBanner();
 });
 
+document.addEventListener("click", (event) => {
+  const jumpButton = event.target.closest("[data-jump-view]");
+  if (!jumpButton) return;
+  activateView(jumpButton.dataset.jumpView);
+});
+
 toolButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    activeView = button.dataset.view;
-    toolButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-    renderInfoPanel();
-    updateViewMode();
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
+    activateView(button.dataset.view);
   });
 });
 

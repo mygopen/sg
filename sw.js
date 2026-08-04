@@ -1,10 +1,10 @@
-const CACHE_NAME = "sg-trip-pwa-20260804-info-v9";
-const RUNTIME_CACHE = "sg-trip-runtime-20260804-info-v9";
+const CACHE_NAME = "sg-trip-pwa-20260804-planner-v11";
+const RUNTIME_CACHE = "sg-trip-runtime-20260804-planner-v11";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=20260804-info-v9",
-  "./app.js?v=20260804-info-v9",
+  "./styles.css?v=20260804-planner-v11",
+  "./app.js?v=20260804-planner-v11",
   "./manifest.webmanifest",
   "./assets/app-icon.svg",
   "./assets/app-icon-180.png",
