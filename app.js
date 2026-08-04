@@ -5,18 +5,18 @@ const days = [
     weekday: "星期六",
     title: "抵達新加坡，Orchard 安頓後進濱海灣",
     theme: "輕鬆適應日",
-    hotel: "Holiday Inn Singapore Orchard City Centre",
+    hotel: "Holiday Inn Singapore Orchard City Centre By IHG / 新加坡烏節路城市中心假日酒店",
     pace: "低強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_and_Merlion.jpg?width=1200",
     imageCredit: "Photo: Wikimedia Commons",
     weather: { icon: "cloud-rain", label: "午後雷雨", temp: "25-32°C" },
     summary:
-      "前兩晚改住 Orchard，抵達後先進 Holiday Inn 休息。傍晚再用 Grab / MRT 進濱海灣拍魚尾獅、吃珍寶海鮮，夜景當作第一天開場。",
+      "前兩晚住 Holiday Inn Singapore Orchard City Centre By IHG。抵達後先進 Orchard 休息，傍晚再用 Grab / MRT 進濱海灣拍魚尾獅、吃珍寶海鮮，夜景當作第一天開場。",
     map: "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Singapore+Orchard+City+Centre",
     stops: [
       ["07:30", "台北 → 新加坡", "直飛，抵達後以飯店休息與夜景為主。機上先補眠，抵達前請孩子把水壺喝完，入境後再補水。"],
       ["12:00", "抵達樟宜、入境與午餐", "抓 90-120 分鐘完成入境、行李與午餐。8 人加行李建議預約接送或分 2 台 Grab XL 直達 Orchard。"],
-      ["14:30", "Holiday Inn Orchard 入住與休息", "入住 Holiday Inn Singapore Orchard City Centre。房間若未好，先寄放行李，到 Orchard Central / 313@Somerset 補水與輕食。"],
+      ["14:30", "Holiday Inn Orchard 入住與休息", "入住 Holiday Inn Singapore Orchard City Centre By IHG。這段住宿為 2 間 2 Double Standard、兩張雙人床房，不含早餐；房間若未好，先寄放行李。"],
       ["16:45", "Orchard 補給與飯店泳池", "第一晚不硬衝，讓孩子在飯店泳池或房間恢復體力；晚間小包只帶水、雨具、行動電源。"],
       ["18:00", "前往魚尾獅公園", "從 Orchard 到 Merlion Park，8 人最省力是分 2 台車；若搭 MRT，可從 Somerset / Dhoby Ghaut 轉到 Raffles Place。"],
       ["18:30", "魚尾獅公園與濱海灣步道", "傍晚光線漂亮，先拍魚尾獅與 MBS 全景，再沿著灣區短走，不把第一天變成拉練。"],
@@ -27,10 +27,10 @@ const days = [
       ["親子節奏", "Orchard 飯店比住灣區多一段晚間移動，所以 Day1 夜景只保留精華，晚餐後看體力決定是否加水舞。"],
       ["交通", "8 人移動以 2 台車最省心；Orchard 晚間叫車方便，但雨天與晚餐後要提早 10-15 分鐘。"],
       ["拍照點", "魚尾獅公園、Helix Bridge、Apple Marina Bay Sands 外側都適合全家合照。"],
-      ["飲水準備", "Holiday Inn 周邊就是 Orchard 商圈，進飯店前可在超市買大瓶水與早餐備品，隔天出門更省時間。"]
+      ["早餐準備", "Holiday Inn 這筆訂房不含早餐，周邊就是 Orchard 商圈；進飯店前可在超市買水、牛奶、麵包或隔天早餐備品。"]
     ],
     sources: [
-      ["Holiday Inn Singapore Orchard City Centre", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
+      ["Holiday Inn Singapore Orchard City Centre By IHG", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
       ["Merlion Park", "https://www.visitsingapore.com/see-do-singapore/recreation-leisure/viewpoints/merlion-park/"],
       ["JUMBO Seafood", "https://www.jumboseafood.com.sg/"],
       ["Marina Bay Sands", "https://www.marinabaysands.com/"]
@@ -42,7 +42,7 @@ const days = [
     weekday: "星期日",
     title: "Orchard 出發，花園、科學館與松發",
     theme: "室內避暑日",
-    hotel: "Holiday Inn Singapore Orchard City Centre",
+    hotel: "Holiday Inn Singapore Orchard City Centre By IHG / 新加坡烏節路城市中心假日酒店",
     pace: "中強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Supertree_Grove%2C_Gardens_by_the_Bay%2C_Singapore.jpg?width=1200",
     imageCredit: "Photo: Ralff Nestor Nacor / Wikimedia Commons",
@@ -51,7 +51,7 @@ const days = [
       "從 Orchard 進 Gardens by the Bay，上午看冷房展館，午後橫移到 Science Centre。晚餐回到市區 Clarke Quay 吃松發肉骨茶，再視體力加燈光秀。",
     map: "https://www.google.com/maps/search/?api=1&query=Gardens+by+the+Bay+Singapore",
     stops: [
-      ["08:15", "早餐後前往 Gardens by the Bay", "從 Holiday Inn Orchard 出發，Grab 約 15-25 分鐘；若搭 MRT，從 Somerset / Dhoby Ghaut 轉 Bayfront，時間抓 35 分鐘。"],
+      ["08:15", "Orchard 早餐後前往 Gardens by the Bay", "Holiday Inn 不含早餐，建議在飯店周邊簡單吃或前晚先買備品。從 Orchard 出發，Grab 約 15-25 分鐘；MRT 抓 35 分鐘。"],
       ["09:00", "Flower Dome / Cloud Forest", "先排冷房展館，孩子可找瀑布、植物任務、雲霧步道；室內冷氣強，薄外套放隨身包。"],
       ["11:40", "Supertree Grove 與輕午餐", "縮短正午戶外時間，可在花園內、Satay by the Bay 或回 MBS 商場找簡單午餐。"],
       ["13:00", "前往 Science Centre Singapore", "從 Gardens 到 Jurong East 距離較遠，8 人建議分 2 台車約 30-40 分鐘；MRT 會較久但可避開塞車。"],
@@ -67,7 +67,7 @@ const days = [
       ["動線重點", "Orchard 到 Gardens、Science Centre 到 Orchard 都建議用車；把 MRT 留給不趕時間、雨勢不大時使用。"]
     ],
     sources: [
-      ["Holiday Inn Singapore Orchard City Centre", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
+      ["Holiday Inn Singapore Orchard City Centre By IHG", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
       ["Gardens by the Bay", "https://www.gardensbythebay.com.sg/"],
       ["Science Centre Singapore", "https://www.science.edu.sg/"],
       ["Song Fa Bak Kut Teh", "https://songfa.com.sg/"],
@@ -80,22 +80,22 @@ const days = [
     weekday: "星期一",
     title: "新加坡動物園，Orchard 轉場到 Oasia Sentosa",
     theme: "行程轉換日",
-    hotel: "Oasia Resort Sentosa",
+    hotel: "Oasia Resort Sentosa by Far East Hospitality / 聖淘沙豪亞度假酒店",
     pace: "中強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance_-_Singapore_Zoo_(01).jpg?width=1200",
     imageCredit: "Photo: Dan arndt / Wikimedia Commons",
     weather: { icon: "umbrella", label: "短暫陣雨", temp: "25-32°C" },
     summary:
-      "上午從 Orchard 退房寄放行李後去新加坡動物園，下午回 Holiday Inn 取行李，再進 Oasia Resort Sentosa。今天的核心是把轉場做乾淨。",
+      "上午從 Orchard 退房寄放行李後去新加坡動物園，下午回 Holiday Inn 取行李，再進 Oasia Resort Sentosa by Far East Hospitality。今天的核心是把轉場做乾淨。",
     map: "https://www.google.com/maps/search/?api=1&query=Singapore+Zoo",
     stops: [
-      ["07:20", "Holiday Inn 退房寄放行李", "把泳衣、涼鞋、防曬放進隨身袋；大行李集中寄放 Holiday Inn 禮賓部，回程取行李再進聖淘沙。"],
+      ["07:20", "Holiday Inn 退房寄放行李", "這晚退房離開 Holiday Inn；因不含早餐，建議先在 Orchard 簡單吃完再出發。泳衣、涼鞋、防曬放隨身袋，大行李寄放禮賓部。"],
       ["08:10", "出發前往 Singapore Zoo", "Orchard 到 Mandai 搭車約 25-35 分鐘。建議抵達開園時段，動物活動力較好。"],
       ["09:00", "新加坡動物園主園區", "優先 Fragile Forest、Primate Kingdom、Elephants of Asia 與 KidzWorld。行程以樹蔭路線走。"],
       ["12:15", "園內午餐與表演", "避開正午硬走；查當日表演時間，提前 15 分鐘到。"],
       ["14:00", "回 Holiday Inn 取行李", "動物園回 Orchard 車上休息，讓孩子補水補糖。若想少繞路，可改預約包車直接載行李轉場。"],
       ["15:15", "移動到 Oasia Resort Sentosa", "Orchard 到 Oasia Resort Sentosa 約 25-40 分鐘，8 人加行李建議預約 van 或分 2 台 Grab XL。"],
-      ["16:00", "Oasia Resort Sentosa 入住", "入住後確認早餐、泳池、Imbiah / Beach Station 交通與隔天前往 RWS 的路線。"],
+      ["16:00", "Oasia Resort Sentosa 入住", "入住 Oasia Resort Sentosa by Far East Hospitality（聖淘沙豪亞度假酒店）後，確認早餐、泳池、Imbiah / Beach Station 交通與隔天前往 RWS 的路線。"],
       ["17:15", "Oasia 泳池與 Sentosa 慢散步", "轉換日最好的收尾是玩水與短散步，可去 Imbiah、Palawan 或 Siloso，避免再安排遠距離景點。"],
       ["19:00", "聖淘沙晚餐", "可在 Mess Hall、Beach Station 或 Resorts World Sentosa 用餐，早點回房。"]
     ],
@@ -107,8 +107,8 @@ const days = [
     ],
     sources: [
       ["Singapore Zoo", "https://www.mandai.com/en/singapore-zoo.html"],
-      ["Holiday Inn Singapore Orchard City Centre", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
-      ["Oasia Resort Sentosa", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"]
+      ["Holiday Inn Singapore Orchard City Centre By IHG", "https://www.holidayinn.com/hotels/gb/en/singapore/sinpv/hoteldetail"],
+      ["Oasia Resort Sentosa by Far East Hospitality", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"]
     ]
   },
   {
@@ -117,13 +117,13 @@ const days = [
     weekday: "星期二",
     title: "Oasia 出發，環球影城與海洋館",
     theme: "玩樂爆發日",
-    hotel: "Oasia Resort Sentosa",
+    hotel: "Oasia Resort Sentosa by Far East Hospitality / 聖淘沙豪亞度假酒店",
     pace: "高強度",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Universal_Studios_Singapore_globe_(125026).jpg?width=1200",
     imageCredit: "Photo: Wikimedia Commons",
     weather: { icon: "cloud-lightning", label: "午後雷陣雨", temp: "26-32°C" },
     summary:
-      "今天住宿點在 Oasia Resort Sentosa，前往 Resorts World Sentosa 很近，把精神留給 Universal Studios Singapore。Oceanarium 視排隊與天氣作為加分項。",
+      "今天住宿點在 Oasia Resort Sentosa by Far East Hospitality，前往 Resorts World Sentosa 很近，把精神留給 Universal Studios Singapore。Oceanarium 視排隊與天氣作為加分項。",
     map: "https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore",
     stops: [
       ["08:15", "Oasia 早餐與出門", "帶輕便雨衣、水壺、行動電源。從 Oasia 到 RWS 可搭 Sentosa Express / 島內交通，或短程叫車。"],
@@ -141,7 +141,7 @@ const days = [
       ["置物櫃使用", "環球影城部分刺激設施需寄放背包，建議準備好 10 元面額或行動支付，並記住自設密碼。"]
     ],
     sources: [
-      ["Oasia Resort Sentosa", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"],
+      ["Oasia Resort Sentosa by Far East Hospitality", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"],
       ["Universal Studios Singapore", "https://www.rwsentosa.com/en/attractions/universal-studios-singapore"],
       ["Singapore Oceanarium", "https://www.rwsentosa.com/en/attractions/singapore-oceanarium"],
       ["Sentosa", "https://www.sentosa.com.sg/"]
@@ -159,7 +159,7 @@ const days = [
     imageCredit: "Photo: Bennv3771 / Wikimedia Commons",
     weather: { icon: "cloud-rain", label: "濕熱有雨", temp: "25-31°C" },
     summary:
-      "回程航班 13:10，從 Oasia Resort Sentosa 退房後直奔樟宜。今天只排機場內的 Jewel Changi，核心是準時、輕鬆、不要趕場。",
+      "回程航班 13:10，從 Oasia Resort Sentosa by Far East Hospitality 退房後直奔樟宜。今天只排機場內的 Jewel Changi，核心是準時、輕鬆、不要趕場。",
     map: "https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport",
     stops: [
       ["07:30", "Oasia 早餐與退房", "確認護照、登機資料、退稅單、孩子隨身外套。退房前把退稅商品與單據集中給一位成人。"],
@@ -176,7 +176,7 @@ const days = [
       ["照片備份", "在候機或機上可以用機場 Wi-Fi 先將這幾天的家庭照片備份到雲端，為旅程留下完美句點。"]
     ],
     sources: [
-      ["Oasia Resort Sentosa", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"],
+      ["Oasia Resort Sentosa by Far East Hospitality", "https://www.oasiahotels.com/en/singapore/hotels/oasia-resort-sentosa"],
       ["Jewel Changi Airport", "https://www.jewelchangiairport.com/"],
       ["Changi Airport", "https://www.changiairport.com/"]
     ]
@@ -199,6 +199,18 @@ const panels = {
           "電力與隨身裝備：新加坡為 Type G 插座、230V；帶轉接頭、行動電源、薄外套、防曬、摺疊傘與水壺，孩子背包維持輕量。",
           "退稅：購物單據與商品集中管理；托運商品先在出境前辦 eTRS，手提商品出境後依指示處理，回程 10:30 前進入報到節奏比較穩。",
           "公共規範：MRT 禁飲食，公共場所請注意垃圾、吸菸與違禁品規定；藥品、電子用品或特殊物品出發前再查官方入境限制。"
+        ]
+      },
+      {
+        icon: "bed-double",
+        title: "住宿資訊",
+        items: [
+          "8/15-8/17 兩晚：Holiday Inn Singapore Orchard City Centre By IHG（新加坡烏節路城市中心假日酒店），住 Orchard 市中心，適合 Day1-2 市區與濱海灣動線。",
+          "Holiday Inn 房型：2 Double Standard，兩張雙人床房 x 2；共 4 成人、4 小孩分兩間房較好管理行李與休息。",
+          "Holiday Inn 餐食：訂房不含早餐。Day2、Day3 早上建議在 Orchard 周邊簡單吃，或前一晚買麵包、牛奶、水果與瓶裝水。",
+          "Holiday Inn 兒童同住：訂房條件註記 12y 以下不加床可免費同住；入住時仍以訂單條款與飯店現場確認為準。",
+          "8/17-8/19 兩晚：Oasia Resort Sentosa by Far East Hospitality（聖淘沙豪亞度假酒店），住島上方便 Day4 環球影城、海洋館與聖淘沙玩水。",
+          "換飯店日提醒：Day3 先從 Holiday Inn 退房寄放行李去動物園，下午回 Orchard 取行李後再進 Oasia；8 人加行李建議預約 van 或分 2 台 Grab XL。"
         ]
       },
       {
@@ -453,7 +465,7 @@ const panels = {
         image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=720&q=78",
         items: [
           "Sentosa Fun Pass：若想跑多個付費景點，建議購買點數型的 Fun Pass 會比較省錢。",
-          "住宿兩天一夜：這次住 Oasia Resort Sentosa，適合把 Day3 轉場後的泳池休息與 Day4 RWS 玩樂分開處理。",
+          "住宿兩晚：這次住 Oasia Resort Sentosa by Far East Hospitality（聖淘沙豪亞度假酒店），適合把 Day3 轉場後的泳池休息與 Day4 RWS 玩樂分開處理。",
           "VivoCity：進島前的最後補給站，有百貨、超市與許多知名美食（如亞坤、美食街）。",
           "Adventure Cove：水上探險樂園，有高速滑道與浮潛體驗，也是避暑好去處。"
         ]
@@ -483,7 +495,7 @@ const stopMapQueries = {
   "魚尾獅公園與濱海灣步道": "Merlion Park Singapore",
   "珍寶海鮮 Riverside Point 晚餐": "JUMBO Seafood Riverside Point Singapore",
   "Spectra 水舞或回 Orchard": "Spectra A Light and Water Show Singapore",
-  "早餐後前往 Gardens by the Bay": "Gardens by the Bay Singapore",
+  "Orchard 早餐後前往 Gardens by the Bay": "Gardens by the Bay Singapore",
   "Flower Dome / Cloud Forest": "Flower Dome Cloud Forest Singapore",
   "Supertree Grove 與輕午餐": "Supertree Grove Singapore",
   "前往 Science Centre Singapore": "Science Centre Singapore",
@@ -550,7 +562,7 @@ const stopThumbImages = {
   "魚尾獅公園與濱海灣步道": thumbImages.merlion,
   "珍寶海鮮 Riverside Point 晚餐": thumbImages.seafood,
   "Spectra 水舞或回 Orchard": thumbImages.mbs,
-  "早餐後前往 Gardens by the Bay": thumbImages.gardens,
+  "Orchard 早餐後前往 Gardens by the Bay": thumbImages.gardens,
   "Flower Dome / Cloud Forest": thumbImages.flower,
   "Supertree Grove 與輕午餐": thumbImages.gardens,
   "前往 Science Centre Singapore": thumbImages.science,
