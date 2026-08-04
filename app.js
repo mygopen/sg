@@ -341,16 +341,60 @@ const panels = {
     sections: [
       {
         icon: "clipboard-check",
-        title: "行前準備與注意事項",
+        title: "行前必看提醒",
         items: [
-          "簽證與護照：台灣普通護照短期觀光 / 社交訪問 30 天內免簽；全員護照效期至少 6 個月，回程機票、飯店地址與保險資料先截圖。",
-          "SG Arrival Card：8/15 抵達新加坡，最早 2026/8/13 可送出，最晚抵達前完成；官方申請免費，只用 ICA e-Service 或 MyICA Mobile。",
-          "網路：影片提到 eSIM、SIM 卡、Wi-Fi 三種方案；建議至少兩位成人各有可上網方案，QR code、兌換憑證與客服資訊先離線保存。",
-          "交通卡與付款：MRT / 巴士可用 Visa、Mastercard 感應支付，也可買 EZ-Link / NETS FlashPay；Grab、CDG Zig、Gojek 出發前先登入綁卡。",
-          "換匯與現金：大型店家刷卡方便，小吃攤、部分熟食中心或臨時現金需求仍準備少量 SGD；用「匯率」頁快速換算台幣與新幣。",
-          "電力與隨身裝備：新加坡為 Type G 插座、230V；帶轉接頭、行動電源、薄外套、防曬、摺疊傘與水壺，孩子背包維持輕量。",
-          "退稅：購物單據與商品集中管理；托運商品先在出境前辦 eTRS，手提商品出境後依指示處理，回程 10:30 前進入報到節奏比較穩。",
-          "公共規範：MRT 禁飲食，公共場所請注意垃圾、吸菸與違禁品規定；藥品、電子用品或特殊物品出發前再查官方入境限制。"
+          "時差：新加坡和台灣同屬 UTC+8，沒有時差；手錶與手機時間不用另外調整。",
+          "簽證與護照：台灣普通護照短期觀光免簽；全員護照效期至少 6 個月，回程機票、飯店地址與旅平險資料先截圖。",
+          "SG Arrival Card：ICA 規定抵達日前 3 天內提交，8/15 抵達建議 2026/8/13 起填寫；官方申請免費，可用中文介面，完成後不用印出。",
+          "SG Arrival Card 可由一位成人用 Group Submission 代填全家資料；仍要逐一填每位旅客的護照、航班與住宿資訊。",
+          "重要資料離線保存：護照、BR225 / BR226、飯店訂單、接送資料、eSIM QR code 與緊急聯絡電話，至少兩位成人手機都要存一份。"
+        ]
+      },
+      {
+        icon: "plug",
+        title: "電力、網路與隨身裝備",
+        items: [
+          "新加坡電壓為 220-240V（常見標示 230V），插座是英式三孔 Type G；手機、相機、行動電源通常只需轉接頭。",
+          "一定要帶轉接頭，建議每房至少 2-3 個；若要同時充手機、行動電源、相機與兒童裝置，多孔延長線會更穩。",
+          "網路：可用中華電信漫遊，或在 KKday / 其他平台購買 eSIM；建議至少兩位成人有獨立網路，避免走散時聯絡不到。",
+          "天氣：8 月濕熱約 27-32 度，常有午後陣雨；每人一支輕便傘或雨衣，室內冷氣強，孩子帶薄外套。",
+          "隨身包：行動電源、水壺、衛生紙、濕紙巾、防曬與小零食每天都帶；一般餐廳不一定提供紙巾。"
+        ]
+      },
+      {
+        icon: "coins",
+        title: "換匯、付款與退稅",
+        items: [
+          "換匯：新加坡多數消費可刷信用卡或 Apple Pay；只有大排檔、小吃攤、部分小店較常用現金。",
+          "現金建議：一家可帶一萬元以內台幣，到新加坡機場換新幣即可；台灣換、當地機場換、市區換差異通常不大。",
+          "快速換算：底部「匯率」頁可用即時匯率換算台幣與新幣，點重新整理後以當下抓到的匯率為主。",
+          "退稅門檻：同日同家店、同 GST 登記資料，最多三張收據加總達 S$100（含 GST）即可符合 eTRS 退稅門檻。",
+          "退稅店內流程：購物時出示護照給店家登錄 eTRS，通常不會另外拿到紙本退稅單；請把收據、商品與付款卡集中管理。",
+          "退稅機場流程：托運商品要在托運前於離境大廳 eTRS 機台處理；手提商品可出境後在轉機區 eTRS 機台處理，再依指示到人工櫃檯或退款點。"
+        ]
+      },
+      {
+        icon: "train-front",
+        title: "交通與搭乘規則",
+        items: [
+          "主要交通：MRT、LRT、巴士與短程叫車。查路線用 Google Maps 就很夠，不必另外下載交通 app。",
+          "大人交通付款：MRT / LRT / 巴士可直接用 Apple Pay 或感應式信用卡進出站；請確認卡片已開海外交易。",
+          "小孩交通付款：建議買 EZ-Link，類似台灣悠遊卡；常見售價約 S$12-15，通常含 S$5 不退還卡費，現場以 MRT / 7-Eleven 售價為準。",
+          "巴士規則：前門上車、後門下車，上車和下車都要刷卡；忘記下車刷卡可能會被扣較高車資。",
+          "叫車提醒：8 人加行李通常分 2 台 Grab / CDG Zig / Gojek；雨天、晚餐後、USS 散場與聖淘沙進出要提早 10-15 分鐘叫車。",
+          "上車點提醒：Orchard、MBS、Jewel、RWS、聖淘沙飯店常有指定 pick-up point，叫車前先確認定位，不要讓全家拖行李走回頭路。"
+        ]
+      },
+      {
+        icon: "landmark",
+        title: "生活常識與公共規範",
+        items: [
+          "飲用水：新加坡自來水可直接飲用；想買瓶裝水請優先到超市，一瓶約 S$0.35-0.50，比超商便宜很多。",
+          "補水策略：飯店先裝水，景點中途再補；超商瓶裝水常明顯偏貴，一瓶可能接近台幣 70-80 元。",
+          "不能帶口香糖入境，新加坡當地也不容易買到口香糖；特殊醫療用途請出發前查官方規定。",
+          "MRT 不能飲食，喝水也不行；搭乘交通工具時先把飲料收好，避免被提醒或罰款。",
+          "過馬路請走斑馬線、天橋或地下道；不要任意穿越馬路。",
+          "公共場所重視規範：垃圾、吸菸、電子菸、管制藥品與特殊食品都要小心，出發前再查官方入境限制。"
         ]
       },
       {
@@ -402,16 +446,6 @@ const panels = {
         ]
       },
       {
-        icon: "landmark",
-        title: "新加坡相關生活常識",
-        items: [
-          "新加坡使用新加坡幣 SGD；多數地方可刷卡或行動支付，但小額現金仍建議準備。",
-          "插座為英規 Type G，電壓 230V；手機、相機、行動電源通常只需轉接頭。",
-          "公共場所重視規範：MRT 禁飲食，亂丟垃圾、違規吸菸、帶榴槤上車都可能受罰。",
-          "室內冷氣很強，孩子可帶薄外套；戶外濕熱，水壺、防曬、輕便雨具每天都要帶。"
-        ]
-      },
-      {
         icon: "siren",
         title: "緊急聯絡電話",
         items: [
@@ -426,8 +460,9 @@ const panels = {
         title: "機場出境教學",
         items: [
           "13:10 回程建議 10:30 前開始報到流程；8 人團請多留排隊、退稅、托運緩衝。",
-          "先處理航空公司報到與托運，再看是否需要退稅；退稅商品與單據請集中給一位成人管理。",
+          "先確認退稅商品是否要托運：托運商品須先在離境大廳 eTRS 機台處理，再托運；手提商品可出境後處理。",
           "Jewel 與航廈相連但不等於已出境，逛完 Jewel 後仍要回航廈完成安檢與出境。",
+          "出境後若有退稅，找 eTRS 機台確認交易筆數，再依指示到人工櫃檯或退款點辦理；護照、收據、商品與登機資料放同一包。",
           "出境後再採買液體或飲料最穩；登機口可能需要二次檢查，請提早看螢幕確認 gate。"
         ]
       },
@@ -435,29 +470,26 @@ const panels = {
         icon: "smartphone",
         title: "必備 APP",
         items: [
+          "Google Maps：查 MRT / LRT / 巴士、步行時間與景點動線；出發前先收藏飯店、餐廳與每日景點。",
+          "MyICA Mobile 或 ICA e-Service：填 SG Arrival Card；官方免費，建議 8/13 起完成全家資料。",
           "Grab：最常用叫車與外送，8 人移動時通常分 2 台。",
           "CDG Zig：可叫 ComfortDelGro 計程車，尖峰時可當 Grab 之外的車源。",
           "Gojek：叫車備案，適合比價與補車源。",
-          "Google Maps / Citymapper：查 MRT、步行時間與景點動線；出發前可先收藏飯店與每日景點。"
-        ]
-      },
-      {
-        icon: "train-front",
-        title: "交通指南",
-        items: [
-          "MRT 適合濱海灣、市區與樟宜機場移動；先看 LTA 官方 MRT/LRT system map，確認轉乘站與步行距離。",
-          "8 人同行叫車通常要分 2 台車；雨天、晚餐後、環球影城散場時段會加價或等較久，建議提早 10-15 分鐘叫車。",
-          "建議安裝 Grab、CDG Zig、Gojek。Grab 覆蓋廣，CDG Zig 可叫 ComfortDelGro 計程車，Gojek 可當價格與車源備案。",
-          "樟宜機場、Orchard、濱海灣、聖淘沙都可以搭車，但聖淘沙進出可能有指定上車點；上車前確認 pick-up point，避免全家拖行李走回頭路。"
+          "KKday / 電信 App：若買 eSIM 或使用中華漫遊，把 QR code、開通說明與客服資訊先截圖離線。",
+          "Changi App：回程在樟宜機場查地圖、設施與航班資訊；Day5 逛 Jewel 時很方便。"
         ]
       }
     ],
     links: [
       ["Visit Singapore", "https://www.visitsingapore.com/"],
       ["Changi Airport", "https://www.changiairport.com/"],
+      ["ICA Entry Requirements", "https://www.ica.gov.sg/enter-transit-depart/entering-singapore"],
       ["ICA SG Arrival Card", "https://eservices.ica.gov.sg/sgarrivalcard/"],
-      ["Singapore Trade Office in Taipei Visa", "https://taipei.mfa.gov.sg/consular-services/visa-information/"],
+      ["ICA Visa Requirements", "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements"],
+      ["ICA What You Can Bring", "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/what-you-can-bring"],
       ["Singapore Customs Tourist Refund Scheme", "https://www.customs.gov.sg/at-customs/departing-singapore/tourist-refund-scheme/"],
+      ["PUB Water Quality", "https://www.pub.gov.sg/Public/WaterLoop/Water-Quality"],
+      ["SimplyGo Contactless Bank Cards", "https://simplygo.com.sg/faqs/cards-and-charms/simplygo/contactless-bank-cards/"],
       ["LTA MRT System Map", "https://www.lta.gov.sg/content/ltaweb/en/public-transport/mrt-and-lrt/mrt-system-map.html"],
       ["Grab Singapore", "https://transport.grab.com/"],
       ["CDG Zig", "https://www.cdgtaxi.com.sg/cdg-zig/"],
